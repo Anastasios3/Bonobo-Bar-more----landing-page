@@ -1,98 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark" x-data="app" x-init="init()">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
 
-    <!-- Primary Meta Tags -->
-    <title>
-      Bonobo Bar & More - All-Day Beachfront Bar & Café in Rethymno, Crete
-    </title>
-    <meta
-      name="title"
-      content="Bonobo Bar & More - All-Day Beachfront Bar & Café in Rethymno, Crete"
-    />
+    <title>Bonobo Bar & More — Rethymno's Premium Beachfront Experience</title>
     <meta
       name="description"
-      content="Experience the perfect blend of vintage charm and modern comfort at Bonobo Bar. Enjoy artisan coffee, craft cocktails, and Mediterranean cuisine with stunning sea views on Rethymno's beautiful beachfront."
+      content="Where vintage soul meets contemporary edge. Premium cocktails, artisan coffee, and Mediterranean cuisine on Rethymno's most beautiful beachfront."
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Bonobo Bar & More — Premium Beachfront Experience"
     />
     <meta
-      name="keywords"
-      content="Bonobo Bar, Rethymno bar, beachfront café, cocktails Crete, coffee Rethymno, Mediterranean cuisine, all-day bar, vintage atmosphere"
+      property="og:description"
+      content="Where vintage soul meets contemporary edge. Premium cocktails, artisan coffee, and Mediterranean cuisine."
     />
-
-    <!-- Geo Tags -->
-    <meta name="geo.region" content="GR-M" />
-    <meta name="geo.placename" content="Rethymno" />
-    <meta name="geo.position" content="35.3727;24.4745" />
-    <meta name="ICBM" content="35.3727, 24.4745" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://anastasios3.github.io/bonobo-bar/assets/og-image.jpg"
+    />
     <meta
       property="og:url"
       content="https://anastasios3.github.io/bonobo-bar/"
     />
-    <meta
-      property="og:title"
-      content="Bonobo Bar & More - All-Day Beachfront Bar & Café in Rethymno, Crete"
-    />
-    <meta
-      property="og:description"
-      content="Experience the perfect blend of vintage charm and modern comfort at Bonobo Bar. Enjoy artisan coffee, craft cocktails, and Mediterranean cuisine with stunning sea views on Rethymno's beautiful beachfront."
-    />
-    <meta
-      property="og:image"
-      content="https://anastasios3.github.io/bonobo-bar/assets/images/bonobo-hero-social.jpg"
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="el_GR" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:url"
-      content="https://anastasios3.github.io/bonobo-bar/"
-    />
-    <meta
-      property="twitter:title"
-      content="Bonobo Bar & More - All-Day Beachfront Bar & Café in Rethymno, Crete"
-    />
-    <meta
-      property="twitter:description"
-      content="Experience the perfect blend of vintage charm and modern comfort at Bonobo Bar. Enjoy artisan coffee, craft cocktails, and Mediterranean cuisine with stunning sea views on Rethymno's beautiful beachfront."
-    />
-    <meta
-      property="twitter:image"
-      content="https://anastasios3.github.io/bonobo-bar/assets/images/bonobo-hero-social.jpg"
-    />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
-
-    <!-- Preconnect to external domains -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
     <link
@@ -107,636 +53,452 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Bonobo Bar & More",
-        "alternateName": "Bonobo Bar",
-        "description": "All-day beachfront bar and café in Rethymno, Crete, offering artisan coffee, craft cocktails, and Mediterranean cuisine with vintage charm and stunning sea views.",
         "url": "https://anastasios3.github.io/bonobo-bar/",
-        "telephone": "+30-693-246-7584",
-        "email": "info@bonobobar.gr",
+        "telephone": "+30 693 246 7584",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Eleftheríou Venizélou 47",
           "addressLocality": "Rethymno",
           "addressRegion": "Crete",
-          "postalCode": "74100",
           "addressCountry": "GR"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 35.3727,
-          "longitude": 24.4745
-        },
         "openingHours": ["Mo-Su 09:00-03:00"],
-        "servesCuisine": ["Mediterranean", "Greek", "International"],
-        "priceRange": "€€",
-        "acceptsReservations": true,
-        "hasMenu": "https://anastasios3.github.io/BONOBO_BAR_QRCODE/",
-        "image": [
-          "https://anastasios3.github.io/bonobo-bar/assets/images/bonobo-hero.jpg",
-          "https://anastasios3.github.io/bonobo-bar/assets/images/bonobo-interior.jpg",
-          "https://anastasios3.github.io/bonobo-bar/assets/images/bonobo-cocktails.jpg"
-        ],
-        "amenityFeature": [
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Free WiFi",
-            "value": true
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Wheelchair Accessible",
-            "value": true
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Pet Friendly",
-            "value": true
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Outdoor Seating",
-            "value": true
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Beachfront Location",
-            "value": true
-          }
-        ],
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.6",
-          "reviewCount": "640",
-          "bestRating": "5",
-          "worstRating": "1"
+          "reviewCount": "640"
         }
       }
     </script>
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./assets/css/main.css" as="style" />
-    <link
-      rel="preload"
-      href="./assets/images/bonobo-hero.webp"
-      as="image"
-      type="image/webp"
-    />
   </head>
 
-  <body x-data="bonobobar">
-    <!-- Skip to main content for accessibility -->
-    <a href="#main" class="skip-link">Skip to main content</a>
-
-    <!-- Header -->
-    <header class="header" role="banner" x-data="{ mobileMenuOpen: false }">
-      <nav
-        class="navbar container"
-        role="navigation"
-        aria-label="Main navigation"
-      >
-        <!-- Logo -->
-        <div class="navbar-brand">
-          <a href="#home" class="logo" aria-label="Bonobo Bar & More - Home">
-            <img
-              src="./assets/images/bonobo-logo.svg"
-              alt="Bonobo Bar Logo"
-              width="120"
-              height="40"
-              loading="eager"
-            />
-          </a>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="nav-glass"
+      x-show="showNav"
+      x-transition:enter="nav-enter"
+      x-transition:leave="nav-leave"
+    >
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="brand-icon">🐒</span>
+          <span class="brand-text">BONOBO</span>
         </div>
 
-        <!-- Desktop Navigation -->
-        <div class="navbar-nav" role="menubar">
-          <a
-            href="#home"
-            class="nav-link"
-            role="menuitem"
-            x-text="content.nav.home"
-          ></a>
-          <a
-            href="#about"
-            class="nav-link"
-            role="menuitem"
-            x-text="content.nav.about"
-          ></a>
-          <a
-            href="#menu"
-            class="nav-link"
-            role="menuitem"
-            x-text="content.nav.menu"
-          ></a>
-          <a
-            href="#events"
-            class="nav-link"
-            role="menuitem"
-            x-text="content.nav.events"
-          ></a>
-          <a
-            href="#contact"
-            class="nav-link"
-            role="menuitem"
-            x-text="content.nav.contact"
-          ></a>
+        <div class="nav-links" x-show="!isMobile">
+          <template x-for="(link, index) in navigation" :key="link.id">
+            <a
+              :href="link.href"
+              class="nav-link"
+              @click="scrollToSection(link.target)"
+              x-text="t[link.key]"
+              :style="`--delay: ${index * 0.1}s`"
+            ></a>
+          </template>
         </div>
 
-        <!-- Controls -->
-        <div class="navbar-controls">
-          <!-- Language Switcher -->
+        <div class="nav-controls">
           <button
-            type="button"
-            class="btn-icon"
-            @click="toggleLanguage()"
-            :aria-label="`Switch to ${currentLang === 'en' ? 'Greek' : 'English'}`"
-            :title="`Switch to ${currentLang === 'en' ? 'Greek' : 'English'}`"
+            class="control-btn"
+            @click="toggleLanguage"
+            :title="t.switchLang"
           >
-            <span
-              class="lang-code"
-              x-text="currentLang === 'en' ? 'GR' : 'EN'"
-            ></span>
+            <span x-text="currentLang.toUpperCase()"></span>
           </button>
-
-          <!-- Theme Toggle -->
           <button
-            type="button"
-            class="btn-icon theme-toggle"
-            @click="toggleTheme()"
-            :aria-label="`Switch to ${currentTheme === 'light' ? 'dark' : 'light'} theme`"
-            :title="`Switch to ${currentTheme === 'light' ? 'dark' : 'light'} theme`"
+            class="control-btn"
+            @click="toggleTheme"
+            :title="t.switchTheme"
           >
-            <svg
-              x-show="currentTheme === 'light'"
-              class="icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M21.75 12A9.75 9.75 0 1112 21.75 9.75 9.75 0 0121.75 12z"
-              />
-            </svg>
-            <svg
-              x-show="currentTheme === 'dark'"
-              class="icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M12 3v18m0-18a9 9 0 019 9H3a9 9 0 019-9z" />
-            </svg>
+            <span x-show="isDark">☀️</span>
+            <span x-show="!isDark">🌙</span>
           </button>
-
-          <!-- Mobile Menu Toggle -->
           <button
-            type="button"
-            class="btn-icon mobile-menu-toggle"
-            @click="mobileMenuOpen = !mobileMenuOpen"
-            :aria-expanded="mobileMenuOpen"
-            aria-label="Toggle mobile menu"
-            x-show="$store.ui.isMobile"
+            class="mobile-menu-btn"
+            @click="toggleMobileMenu"
+            x-show="isMobile"
           >
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path x-show="!mobileMenuOpen" d="M4 6h16M4 12h16M4 18h16" />
-              <path x-show="mobileMenuOpen" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <span class="hamburger" :class="{ active: mobileMenuOpen }"></span>
           </button>
         </div>
+      </div>
+    </nav>
 
-        <!-- Mobile Menu -->
+    <!-- Mobile Menu Overlay -->
+    <div
+      class="mobile-overlay"
+      x-show="mobileMenuOpen && isMobile"
+      x-transition:enter="fade-enter"
+      x-transition:leave="fade-leave"
+      @click="closeMobileMenu"
+    >
+      <div class="mobile-menu" @click.stop>
+        <template x-for="(link, index) in navigation" :key="link.id">
+          <a
+            :href="link.href"
+            class="mobile-link"
+            @click="scrollToSection(link.target); closeMobileMenu()"
+            x-text="t[link.key]"
+            :style="`--delay: ${index * 0.1}s`"
+          ></a>
+        </template>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-pattern"></div>
+      </div>
+
+      <div class="hero-content">
         <div
-          class="mobile-menu"
-          x-show="mobileMenuOpen && $store.ui.isMobile"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 transform -translate-y-2"
-          x-transition:enter-end="opacity-100 transform translate-y-0"
-          x-transition:leave="transition ease-in duration-150"
-          x-transition:leave-start="opacity-100 transform translate-y-0"
-          x-transition:leave-end="opacity-0 transform -translate-y-2"
-          role="menu"
+          class="hero-badge"
+          x-show="heroLoaded"
+          x-transition:enter="slide-up"
         >
-          <a
-            href="#home"
-            class="mobile-nav-link"
-            role="menuitem"
-            @click="mobileMenuOpen = false"
-            x-text="content.nav.home"
-          ></a>
-          <a
-            href="#about"
-            class="mobile-nav-link"
-            role="menuitem"
-            @click="mobileMenuOpen = false"
-            x-text="content.nav.about"
-          ></a>
-          <a
-            href="#menu"
-            class="mobile-nav-link"
-            role="menuitem"
-            @click="mobileMenuOpen = false"
-            x-text="content.nav.menu"
-          ></a>
-          <a
-            href="#events"
-            class="mobile-nav-link"
-            role="menuitem"
-            @click="mobileMenuOpen = false"
-            x-text="content.nav.events"
-          ></a>
-          <a
-            href="#contact"
-            class="mobile-nav-link"
-            role="menuitem"
-            @click="mobileMenuOpen = false"
-            x-text="content.nav.contact"
-          ></a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main" role="main">
-      <!-- Hero Section -->
-      <section id="home" class="hero" role="banner">
-        <div class="hero-background">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="./assets/images/bonobo-hero-desktop.webp"
-              type="image/webp"
-            />
-            <source
-              media="(min-width: 768px)"
-              srcset="./assets/images/bonobo-hero-desktop.jpg"
-              type="image/jpeg"
-            />
-            <source
-              srcset="./assets/images/bonobo-hero-mobile.webp"
-              type="image/webp"
-            />
-            <img
-              src="./assets/images/bonobo-hero-mobile.jpg"
-              alt="Bonobo Bar beachfront terrace with sea view"
-              class="hero-image"
-              loading="eager"
-              decoding="async"
-            />
-          </picture>
-          <div class="hero-overlay"></div>
+          <span class="badge-text">EST. 2017</span>
+          <span class="badge-dot"></span>
+          <span class="badge-text">RETHYMNO, CRETE</span>
         </div>
 
-        <div class="hero-content container">
-          <div class="hero-text">
-            <h1 class="hero-title" x-text="content.hero.title"></h1>
-            <p class="hero-subtitle" x-text="content.hero.subtitle"></p>
-            <p class="hero-description" x-text="content.hero.description"></p>
-          </div>
+        <h1
+          class="hero-title"
+          x-show="heroLoaded"
+          x-transition:enter="slide-up"
+          style="--delay: 0.2s"
+        >
+          <span class="title-main">BONOBO</span>
+          <span class="title-sub">BAR & MORE</span>
+        </h1>
 
-          <div class="hero-actions">
-            <a
-              href="#contact"
-              class="btn btn-primary"
-              x-text="content.hero.cta.contact"
-            ></a>
-            <a
-              href="https://anastasios3.github.io/BONOBO_BAR_QRCODE/"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              x-text="content.hero.cta.menu"
-            ></a>
-          </div>
-        </div>
+        <p
+          class="hero-tagline"
+          x-show="heroLoaded"
+          x-transition:enter="slide-up"
+          style="--delay: 0.4s"
+          x-text="t.hero.tagline"
+        ></p>
 
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator">
-          <button
-            type="button"
-            class="scroll-button"
-            @click="scrollToSection('#about')"
-            aria-label="Scroll to about section"
-          >
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <div
+          class="hero-actions"
+          x-show="heroLoaded"
+          x-transition:enter="slide-up"
+          style="--delay: 0.6s"
+        >
+          <button class="btn-primary" @click="scrollToSection('#contact')">
+            <span x-text="t.hero.visit"></span>
+            <svg viewBox="0 0 24 24" class="btn-icon">
               <path d="m7 13 5 5 5-5M7 6l5 5 5-5" />
             </svg>
           </button>
+          <button class="btn-secondary" @click="openMenu">
+            <span x-text="t.hero.menu"></span>
+            <svg viewBox="0 0 24 24" class="btn-icon">
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+              <polyline points="15,3 21,3 21,9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </button>
         </div>
-      </section>
+      </div>
 
-      <!-- About Section -->
-      <section id="about" class="about section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title" x-text="content.about.title"></h2>
-            <p class="section-subtitle" x-text="content.about.subtitle"></p>
+      <div
+        class="scroll-indicator"
+        x-show="heroLoaded"
+        x-transition:enter="fade-in"
+        style="--delay: 1s"
+      >
+        <button @click="scrollToSection('#about')" class="scroll-btn">
+          <div class="scroll-wheel"></div>
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-modern">
+      <div class="container-fluid">
+        <div class="section-grid">
+          <div class="content-side">
+            <div
+              class="section-label"
+              x-intersect="$el.classList.add('animate')"
+            >
+              <span x-text="t.about.label"></span>
+            </div>
+            <h2
+              class="section-title"
+              x-intersect="$el.classList.add('animate')"
+              x-text="t.about.title"
+            ></h2>
+            <div
+              class="text-content"
+              x-intersect="$el.classList.add('animate')"
+            >
+              <p x-text="t.about.description"></p>
+              <p x-text="t.about.philosophy"></p>
+            </div>
           </div>
 
-          <div class="about-content">
-            <div class="about-text">
-              <p x-text="content.about.description1"></p>
-              <p x-text="content.about.description2"></p>
-              <p x-text="content.about.description3"></p>
-            </div>
-
-            <div class="about-features">
-              <div class="feature" x-for="feature in content.about.features">
-                <div class="feature-icon">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path x-bind:d="feature.icon"></path>
-                  </svg>
+          <div class="features-side">
+            <div class="features-grid">
+              <template x-for="(feature, index) in features" :key="feature.id">
+                <div
+                  class="feature-card modern"
+                  x-intersect="$el.classList.add('animate')"
+                  :style="`--delay: ${index * 0.1}s`"
+                >
+                  <div class="feature-icon" x-html="feature.icon"></div>
+                  <h3 x-text="feature.title"></h3>
+                  <p x-text="feature.description"></p>
                 </div>
-                <h3 class="feature-title" x-text="feature.title"></h3>
-                <p class="feature-description" x-text="feature.description"></p>
-              </div>
+              </template>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Menu Sections -->
-      <section id="menu" class="menu section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title" x-text="content.menu.title"></h2>
-            <p class="section-subtitle" x-text="content.menu.subtitle"></p>
+    <!-- Menu Preview Section -->
+    <section id="menu" class="section-dark">
+      <div class="container-fluid">
+        <div class="section-header center">
+          <div class="section-label" x-intersect="$el.classList.add('animate')">
+            <span x-text="t.menu.label"></span>
           </div>
+          <h2
+            class="section-title"
+            x-intersect="$el.classList.add('animate')"
+            x-text="t.menu.title"
+          ></h2>
+          <p
+            class="section-subtitle"
+            x-intersect="$el.classList.add('animate')"
+            x-text="t.menu.subtitle"
+          ></p>
+        </div>
 
-          <div class="menu-grid">
-            <!-- Coffee & Breakfast -->
-            <div class="menu-card">
-              <div class="menu-card-image">
-                <picture>
-                  <source
-                    srcset="./assets/images/coffee-breakfast.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/coffee-breakfast.jpg"
-                    alt="Fresh coffee and breakfast items"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+        <div class="menu-showcase">
+          <template x-for="(item, index) in menuItems" :key="item.id">
+            <div
+              class="menu-card-modern"
+              x-intersect="$el.classList.add('animate')"
+              :style="`--delay: ${index * 0.2}s`"
+            >
+              <div class="card-image">
+                <img :src="item.image" :alt="item.title" loading="lazy" />
+                <div class="card-overlay">
+                  <div class="overlay-content">
+                    <h3 x-text="item.title"></h3>
+                    <p x-text="item.description"></p>
+                  </div>
+                </div>
               </div>
-              <div class="menu-card-content">
-                <h3
-                  class="menu-card-title"
-                  x-text="content.menu.coffee.title"
-                ></h3>
-                <p
-                  class="menu-card-description"
-                  x-text="content.menu.coffee.description"
-                ></p>
-                <ul class="menu-highlights">
-                  <li
-                    x-for="item in content.menu.coffee.highlights"
-                    x-text="item"
-                  ></li>
+              <div class="card-content">
+                <div
+                  class="card-number"
+                  x-text="(index + 1).toString().padStart(2, '0')"
+                ></div>
+                <h3 x-text="item.title"></h3>
+                <ul>
+                  <template x-for="highlight in item.highlights">
+                    <li x-text="highlight"></li>
+                  </template>
                 </ul>
               </div>
             </div>
-
-            <!-- Beer, Wine & Spirits -->
-            <div class="menu-card">
-              <div class="menu-card-image">
-                <picture>
-                  <source
-                    srcset="./assets/images/beer-wine-spirits.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/beer-wine-spirits.jpg"
-                    alt="Selection of beers, wines and spirits"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-              <div class="menu-card-content">
-                <h3
-                  class="menu-card-title"
-                  x-text="content.menu.drinks.title"
-                ></h3>
-                <p
-                  class="menu-card-description"
-                  x-text="content.menu.drinks.description"
-                ></p>
-                <ul class="menu-highlights">
-                  <li
-                    x-for="item in content.menu.drinks.highlights"
-                    x-text="item"
-                  ></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Cocktails & Night Events -->
-            <div class="menu-card">
-              <div class="menu-card-image">
-                <picture>
-                  <source
-                    srcset="./assets/images/cocktails-events.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/cocktails-events.jpg"
-                    alt="Colorful cocktails and night atmosphere"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-              <div class="menu-card-content">
-                <h3
-                  class="menu-card-title"
-                  x-text="content.menu.cocktails.title"
-                ></h3>
-                <p
-                  class="menu-card-description"
-                  x-text="content.menu.cocktails.description"
-                ></p>
-                <ul class="menu-highlights">
-                  <li
-                    x-for="item in content.menu.cocktails.highlights"
-                    x-text="item"
-                  ></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-cta">
-            <a
-              href="https://anastasios3.github.io/BONOBO_BAR_QRCODE/"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              x-text="content.menu.viewFullMenu"
-            ></a>
-          </div>
+          </template>
         </div>
-      </section>
 
-      <!-- Events Section -->
-      <section id="events" class="events section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title" x-text="content.events.title"></h2>
-            <p class="section-subtitle" x-text="content.events.subtitle"></p>
+        <div class="menu-cta" x-intersect="$el.classList.add('animate')">
+          <button class="btn-glass" @click="openMenu">
+            <span x-text="t.menu.viewFull"></span>
+            <svg viewBox="0 0 24 24" class="btn-icon">
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+              <polyline points="15,3 21,3 21,9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-modern">
+      <div class="container-fluid">
+        <div class="section-grid reverse">
+          <div class="timeline-side">
+            <div class="timeline">
+              <template x-for="(event, index) in experiences" :key="event.id">
+                <div
+                  class="timeline-item"
+                  x-intersect="$el.classList.add('animate')"
+                  :style="`--delay: ${index * 0.1}s`"
+                >
+                  <div class="timeline-time" x-text="event.time"></div>
+                  <div class="timeline-content">
+                    <h3 x-text="event.title"></h3>
+                    <p x-text="event.description"></p>
+                  </div>
+                </div>
+              </template>
+            </div>
           </div>
 
-          <div class="events-content">
-            <div class="events-text">
-              <p x-text="content.events.description"></p>
+          <div class="content-side">
+            <div
+              class="section-label"
+              x-intersect="$el.classList.add('animate')"
+            >
+              <span x-text="t.experience.label"></span>
             </div>
-
-            <div class="events-list">
-              <div class="event-item" x-for="event in content.events.items">
-                <div class="event-time" x-text="event.time"></div>
-                <div class="event-details">
-                  <h3 class="event-title" x-text="event.title"></h3>
-                  <p class="event-description" x-text="event.description"></p>
-                </div>
-              </div>
+            <h2
+              class="section-title"
+              x-intersect="$el.classList.add('animate')"
+              x-text="t.experience.title"
+            ></h2>
+            <div
+              class="text-content"
+              x-intersect="$el.classList.add('animate')"
+            >
+              <p x-text="t.experience.description"></p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title" x-text="content.contact.title"></h2>
-            <p class="section-subtitle" x-text="content.contact.subtitle"></p>
+    <!-- Contact Section -->
+    <section id="contact" class="section-contact">
+      <div class="container-fluid">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div
+              class="section-label"
+              x-intersect="$el.classList.add('animate')"
+            >
+              <span x-text="t.contact.label"></span>
+            </div>
+            <h2
+              class="section-title"
+              x-intersect="$el.classList.add('animate')"
+              x-text="t.contact.title"
+            ></h2>
+
+            <div class="contact-cards">
+              <template
+                x-for="(contact, index) in contactInfo"
+                :key="contact.id"
+              >
+                <div
+                  class="contact-card glass"
+                  x-intersect="$el.classList.add('animate')"
+                  :style="`--delay: ${index * 0.1}s`"
+                >
+                  <div class="contact-icon" x-html="contact.icon"></div>
+                  <div class="contact-details">
+                    <h3 x-text="contact.title"></h3>
+                    <p x-text="contact.value"></p>
+                    <a
+                      x-show="contact.link"
+                      :href="contact.link"
+                      x-text="contact.linkText"
+                    ></a>
+                  </div>
+                </div>
+              </template>
+            </div>
           </div>
 
-          <div class="contact-grid">
-            <div class="contact-info">
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                    />
-                  </svg>
-                </div>
-                <div class="contact-details">
-                  <h3 x-text="content.contact.location.title"></h3>
-                  <p x-text="content.contact.location.address"></p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                    />
-                  </svg>
-                </div>
-                <div class="contact-details">
-                  <h3 x-text="content.contact.phone.title"></h3>
-                  <a
-                    href="tel:+306932467584"
-                    x-text="content.contact.phone.number"
-                  ></a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                    />
-                  </svg>
-                </div>
-                <div class="contact-details">
-                  <h3 x-text="content.contact.hours.title"></h3>
-                  <p x-text="content.contact.hours.time"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-map">
+          <div class="map-side">
+            <div
+              class="map-container modern"
+              x-intersect="$el.classList.add('animate')"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.7944905394845!2d24.472031315559825!3d35.37270498026967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a5b5b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sBonobo%20Bar!5e0!3m2!1sen!2sgr!4v1609459200000!5m2!1sen!2sgr"
                 width="100%"
-                height="300"
+                height="400"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Bonobo Bar location on Google Maps"
-              >
-              </iframe>
+                title="Bonobo Bar Location"
+              ></iframe>
+              <div class="map-overlay">
+                <div class="map-badge">
+                  <span class="badge-icon">📍</span>
+                  <span class="badge-text">BEACHFRONT LOCATION</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        <div class="footer-content">
+    <footer class="footer-modern">
+      <div class="container-fluid">
+        <div class="footer-grid">
           <div class="footer-brand">
-            <img
-              src="./assets/images/bonobo-logo-light.svg"
-              alt="Bonobo Bar Logo"
-              width="120"
-              height="40"
-              loading="lazy"
-            />
-            <p x-text="content.footer.description"></p>
+            <div class="brand-logo">
+              <span class="brand-icon">🐒</span>
+              <span class="brand-text">BONOBO</span>
+            </div>
+            <p x-text="t.footer.tagline"></p>
+            <div class="social-links">
+              <a
+                href="https://facebook.com/bonobobargr"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com/bonobobargr"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div class="footer-links">
-            <div class="footer-section">
-              <h4 x-text="content.footer.contact.title"></h4>
-              <ul>
-                <li>
-                  <a
-                    href="tel:+306932467584"
-                    x-text="content.footer.contact.phone"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:info@bonobobar.gr"
-                    x-text="content.footer.contact.email"
-                  ></a>
-                </li>
-                <li x-text="content.footer.contact.address"></li>
-              </ul>
+            <div class="link-group">
+              <h3 x-text="t.footer.contact.title"></h3>
+              <p x-text="t.footer.contact.address"></p>
+              <a
+                :href="`tel:${t.footer.contact.phone}`"
+                x-text="t.footer.contact.phone"
+              ></a>
+              <a
+                :href="`mailto:${t.footer.contact.email}`"
+                x-text="t.footer.contact.email"
+              ></a>
             </div>
 
-            <div class="footer-section">
-              <h4 x-text="content.footer.hours.title"></h4>
-              <ul>
-                <li x-text="content.footer.hours.daily"></li>
-                <li x-text="content.footer.hours.time"></li>
-              </ul>
-            </div>
-
-            <div class="footer-section">
-              <h4 x-text="content.footer.social.title"></h4>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/bonobobargr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Facebook</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/bonobobargr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Instagram</a
-                  >
-                </li>
-              </ul>
+            <div class="link-group">
+              <h3 x-text="t.footer.hours.title"></h3>
+              <p x-text="t.footer.hours.daily"></p>
+              <p x-text="t.footer.hours.time"></p>
             </div>
           </div>
         </div>
@@ -744,81 +506,44 @@
         <div class="footer-bottom">
           <p>
             &copy; 2024 Bonobo Bar & More.
-            <span x-text="content.footer.rights"></span>
+            <span x-text="t.footer.rights"></span>
           </p>
-          <div class="footer-legal">
-            <button
-              type="button"
-              @click="bmOpen()"
-              x-text="content.footer.privacy"
-            ></button>
-          </div>
+          <button
+            class="link-btn"
+            @click="openPrivacy"
+            x-text="t.footer.privacy"
+          ></button>
         </div>
       </div>
     </footer>
 
-    <!-- Back to top button -->
+    <!-- Floating Elements -->
     <button
-      type="button"
-      class="back-to-top"
-      @click="scrollToTop()"
-      x-show="showBackToTop"
-      x-transition:enter="transition ease-out duration-300"
-      x-transition:enter-start="opacity-0 transform translate-y-2"
-      x-transition:enter-end="opacity-100 transform translate-y-0"
-      x-transition:leave="transition ease-in duration-200"
-      x-transition:leave-start="opacity-100 transform translate-y-0"
-      x-transition:leave-end="opacity-0 transform translate-y-2"
-      aria-label="Back to top"
+      class="fab"
+      @click="scrollToTop"
+      x-show="showFab"
+      x-transition
+      class="floating-action"
     >
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="m7 14 5-5 5 5" />
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="m7 14 5-5 5 5" /></svg>
     </button>
 
     <!-- Scripts -->
     <script>
-      // Global configuration for Biscuitman cookie consent
       window.biscuitman = {
-        sections: ["essential", "functional", "analytics", "advertisement"],
-        title: "Your Privacy Matters",
-        message:
-          'We use cookies to enhance your browsing experience, provide personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. {link}',
+        sections: ["essential", "functional", "analytics"],
+        title: "Privacy Settings",
+        message: "We use cookies to enhance your experience. {link}",
         linkText: "Privacy Policy",
         linkURL: "#privacy",
-
-        essentialTitle: "Essential",
-        essentialMessage:
-          "Essential cookies are required for basic site functionality.",
-
-        functionalTitle: "Functional",
-        functionalMessage:
-          "Functional cookies help perform certain functionalities like sharing content on social media.",
-
-        analyticsTitle: "Analytics",
-        analyticsMessage:
-          "Analytics cookies help us understand how visitors interact with our website.",
-        analyticsCookies: {
-          _ga: "Google Analytics cookie for tracking user interactions",
-          "_ga_*": "Google Analytics cookie for session tracking",
-        },
-
-        advertisementTitle: "Advertisement",
-        advertisementMessage:
-          "Advertisement cookies deliver personalized ads based on your interests.",
       };
     </script>
-
-    <!-- External Scripts -->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
     ></script>
-
-    <!-- Cookie consent - load after Alpine.js -->
     <script>
       document.addEventListener("alpine:init", () => {
-        // Load Biscuitman after Alpine.js is ready
         const script = document.createElement("script");
         script.src =
           "https://cdn.jsdelivr.net/npm/biscuitman@1.0.1/dist/biscuitman.withcss.min.js";
@@ -826,8 +551,6 @@
         document.head.appendChild(script);
       });
     </script>
-
-    <!-- Main Application Script -->
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

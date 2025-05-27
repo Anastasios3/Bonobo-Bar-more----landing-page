@@ -1,560 +1,566 @@
 /**
- * BONOBO BAR & MORE - MAIN APPLICATION SCRIPT
- * Sophisticated Alpine.js implementation with bilingual support
- * Theme switching, smooth interactions, and premium UX
+ * BONOBO BAR & MORE — MODERN WEB APPLICATION
+ * Cutting-edge Alpine.js implementation with contemporary UX
  */
 
-// Content data for bilingual support
-const content = {
+// Modern translation system
+const translations = {
   en: {
-    nav: {
-      home: "Home",
-      about: "About",
-      menu: "Menu",
-      events: "Events",
-      contact: "Contact",
-    },
+    // Navigation
+    about: "About",
+    menu: "Menu",
+    experience: "Experience",
+    contact: "Contact",
+
+    // Hero section
     hero: {
-      title: "Bonobo Bar & More",
-      subtitle: "All-Day Beachfront Experience",
-      description:
-        "Where vintage charm meets modern comfort on the beautiful shores of Rethymno. From artisan coffee at sunrise to craft cocktails under the stars.",
-      cta: {
-        contact: "Visit Us",
-        menu: "View Menu",
-      },
+      tagline:
+        "Where vintage soul meets contemporary edge — Rethymno's most sophisticated beachfront experience.",
+      visit: "Visit Us",
+      menu: "View Menu",
     },
+
+    // About section
     about: {
-      title: "Our Story",
-      subtitle:
-        "A unique blend of Mediterranean hospitality and contemporary design",
-      description1:
-        "Since 2017, Bonobo Bar has been Rethymno's premier all-day destination, seamlessly transitioning from a relaxed morning café to a vibrant evening cocktail bar.",
-      description2:
-        "Our vintage-inspired interior with warm lighting and modern touches creates an intimate yet lively atmosphere, while our beachfront terrace offers breathtaking sea views framed by native palm trees.",
-      description3:
-        "We pride ourselves on using local Cretan ingredients, from homegrown herbs in our signature cocktails to seasonal fruits that inspire our creative mixology.",
-      features: [
-        {
-          title: "Beachfront Location",
-          description:
-            "Stunning Mediterranean sea views right on Rethymno's beautiful beach promenade.",
-          icon: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
-        },
-        {
-          title: "All-Day Experience",
-          description:
-            "From morning coffee and brunch to evening cocktails and late-night entertainment.",
-          icon: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
-        },
-        {
-          title: "Local Ingredients",
-          description:
-            "Authentic Cretan flavors with locally sourced herbs, honey, and seasonal fruits.",
-          icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
-        },
-        {
-          title: "Live Entertainment",
-          description:
-            "Regular DJ nights, live music, and themed events featuring electronic and soul music.",
-          icon: "M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z",
-        },
-      ],
+      label: "Our Philosophy",
+      title: "Crafting Moments, Creating Memories",
+      description:
+        "Since 2017, we've redefined the all-day experience in Rethymno. Our space evolves from serene morning sanctuary to vibrant evening destination, each moment carefully orchestrated.",
+      philosophy:
+        "We believe in the power of place — where architecture meets atmosphere, where local traditions embrace global sophistication, where every detail serves the greater experience.",
     },
+
+    // Menu section
     menu: {
-      title: "Our Offerings",
+      label: "Curated Selection",
+      title: "Elevated Experiences",
       subtitle:
-        "From sunrise coffee to midnight cocktails, discover our carefully crafted selections",
-      coffee: {
-        title: "Coffee & Breakfast",
-        description:
-          "Start your day with our expertly brewed coffee and delicious breakfast options.",
-        highlights: [
-          "Artisan espresso & specialty coffee drinks",
-          "Fresh pastries & Mediterranean breakfast",
-          "Homemade pancakes & healthy options",
-          "Complimentary treats with morning coffee",
-        ],
-      },
-      drinks: {
-        title: "Beer, Wine & Spirits",
-        description:
-          "Carefully curated selection of local and international beverages.",
-        highlights: [
-          "Local Greek wines & Cretan varietals",
-          "Craft beers & international selections",
-          "Premium spirits & aged selections",
-          "Wine pairings with local cheese & olives",
-        ],
-      },
-      cocktails: {
-        title: "Cocktails & Night Events",
-        description:
-          "Handcrafted cocktails and vibrant nightlife entertainment.",
-        highlights: [
-          "Signature cocktails with local ingredients",
-          "Classic & contemporary mixology",
-          "Live DJ sets & themed parties",
-          "Late-night atmosphere until 3 AM",
-        ],
-      },
-      viewFullMenu: "View Full Menu",
+        "Each offering tells a story of craftsmanship, quality, and creative passion.",
+      viewFull: "Explore Full Menu",
     },
-    events: {
-      title: "Events & Entertainment",
-      subtitle:
-        "Experience the vibrant nightlife and special events that make Bonobo unique",
+
+    // Experience section
+    experience: {
+      label: "Daily Rhythm",
+      title: "From Dawn to Midnight",
       description:
-        "Our programming transforms throughout the week, from relaxed brunch sessions to energetic DJ nights. We host regular themed events, live music performances, and special celebrations that bring together locals and visitors in our unique beachfront setting.",
-      items: [
-        {
-          time: "Daily 9AM-3PM",
-          title: "All-Day Café Service",
-          description:
-            "Coffee, brunch, and light meals in a relaxed beachfront atmosphere with soft lounge music.",
-        },
-        {
-          time: "Evenings 6PM+",
-          title: "Cocktail Hour",
-          description:
-            "Transition to evening mode with craft cocktails and a more vibrant social atmosphere.",
-        },
-        {
-          time: "Weekend Nights",
-          title: "Live DJ Sets",
-          description:
-            "Electronic, soul, and Afro-house music with local and guest DJs creating the perfect beach party vibe.",
-        },
-        {
-          time: "Special Events",
-          title: "Themed Nights",
-          description:
-            "Seasonal celebrations, wine tastings, and exclusive parties featuring the best of Cretan hospitality.",
-        },
-      ],
+        "Our space transforms throughout the day, each moment offering its own unique energy and atmosphere. Experience the full spectrum of Bonobo's personality.",
     },
+
+    // Contact section
     contact: {
-      title: "Visit Us",
-      subtitle: "Find us on the beautiful beachfront of Rethymno's Old Town",
-      location: {
-        title: "Location",
-        address: "Eleftheríou Venizélou 47, Rethymno 74100, Crete, Greece",
-      },
-      phone: {
-        title: "Phone",
-        number: "+30 693 246 7584",
-      },
-      hours: {
-        title: "Hours",
-        time: "Daily 9:00 AM - 3:00 AM",
-      },
+      label: "Visit Us",
+      title: "Find Your Moment",
     },
+
+    // Footer
     footer: {
-      description:
-        "Experience the perfect blend of vintage charm and modern comfort at Rethymno's premier beachfront destination.",
+      tagline:
+        "Creating extraordinary moments on Rethymno's most beautiful beachfront.",
       contact: {
-        title: "Contact",
-        phone: "+30 693 246 7584",
-        email: "info@bonobobar.gr",
+        title: "Connect",
         address: "Eleftheríou Venizélou 47, Rethymno",
+        phone: "+30 693 246 7584",
+        email: "hello@bonobobar.gr",
       },
       hours: {
         title: "Hours",
-        daily: "Open Daily",
-        time: "9:00 AM - 3:00 AM",
-      },
-      social: {
-        title: "Follow Us",
+        daily: "Every Day",
+        time: "9:00 AM — 3:00 AM",
       },
       rights: "All rights reserved.",
       privacy: "Privacy Settings",
     },
+
+    // UI elements
+    switchLang: "Switch to Greek",
+    switchTheme: "Toggle theme",
   },
+
   el: {
-    nav: {
-      home: "Αρχική",
-      about: "Σχετικά",
-      menu: "Μενού",
-      events: "Εκδηλώσεις",
-      contact: "Επικοινωνία",
-    },
+    // Navigation
+    about: "Σχετικά",
+    menu: "Μενού",
+    experience: "Εμπειρία",
+    contact: "Επικοινωνία",
+
+    // Hero section
     hero: {
-      title: "Bonobo Bar & More",
-      subtitle: "Ολοήμερη Παραθαλάσσια Εμπειρία",
-      description:
-        "Όπου η vintage γοητεία συναντά τη σύγχρονη άνεση στις όμορφες ακτές του Ρεθύμνου. Από artisan καφέ στην ανατολή μέχρι craft κοκτέιλ κάτω από τα αστέρια.",
-      cta: {
-        contact: "Επισκεφθείτε μας",
-        menu: "Δείτε το Μενού",
-      },
+      tagline:
+        "Όπου η vintage ψυχή συναντά τη σύγχρονη αισθητική — η πιο εκλεπτυσμένη παραθαλάσσια εμπειρία του Ρεθύμνου.",
+      visit: "Επισκεφθείτε μας",
+      menu: "Δείτε το Μενού",
     },
+
+    // About section
     about: {
-      title: "Η Ιστορία μας",
-      subtitle:
-        "Ένας μοναδικός συνδυασμός μεσογειακής φιλοξενίας και σύγχρονου σχεδιασμού",
-      description1:
-        "Από το 2017, το Bonobo Bar είναι ο κορυφαίος ολοήμερος προορισμός του Ρεθύμνου, που μεταμορφώνεται άψογα από ένα χαλαρό πρωινό καφέ σε ένα ζωντανό βραδινό cocktail bar.",
-      description2:
-        "Ο vintage εσωτερικός μας χώρος με τον ζεστό φωτισμό και τις μοντέρνες πινελιές δημιουργεί μια ατμόσφαιρα ενόσω οικεία όσο και ζωντανή, ενώ η παραθαλάσσια βεράντα μας προσφέρει εκπληκτική θέα στη θάλασσα πλαισιωμένη από γηγενή φοίνικες.",
-      description3:
-        "Είμαστε περήφανοι που χρησιμοποιούμε τοπικά κρητικά υλικά, από αυτοφυή βότανα στα χαρακτηριστικά μας κοκτέιλ μέχρι εποχικά φρούτα που εμπνέουν τη δημιουργική μας μιξολογία.",
-      features: [
-        {
-          title: "Παραθαλάσσια Τοποθεσία",
-          description:
-            "Εκπληκτική θέα στη Μεσόγειο ακριβώς στην όμορφη παραλιακή προμενάντ του Ρεθύμνου.",
-          icon: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
-        },
-        {
-          title: "Ολοήμερη Εμπειρία",
-          description:
-            "Από πρωινό καφέ και brunch μέχρι βραδινά κοκτέιλ και νυχτερινή διασκέδαση.",
-          icon: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
-        },
-        {
-          title: "Τοπικά Υλικά",
-          description:
-            "Αυθεντικές κρητικές γεύσεις με τοπικά βότανα, μέλι και εποχικά φρούτα.",
-          icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
-        },
-        {
-          title: "Ζωντανή Διασκέδαση",
-          description:
-            "Τακτικές βραδιές DJ, ζωντανή μουσική και θεματικές εκδηλώσεις με electronic και soul μουσική.",
-          icon: "M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z",
-        },
-      ],
+      label: "Η Φιλοσοφία μας",
+      title: "Δημιουργώντας Στιγμές, Χτίζοντας Αναμνήσεις",
+      description:
+        "Από το 2017, έχουμε επαναπροσδιορίσει την ολοήμερη εμπειρία στο Ρέθυμνο. Ο χώρος μας εξελίσσεται από γαλήνιο πρωινό καταφύγιο σε ζωντανό βραδινό προορισμό.",
+      philosophy:
+        "Πιστεύουμε στη δύναμη του τόπου — όπου η αρχιτεκτονική συναντά την ατμόσφαιρα, όπου οι τοπικές παραδόσεις αγκαλιάζουν την παγκόσμια εκλέπτυνση.",
     },
+
+    // Menu section
     menu: {
-      title: "Η Προσφορά μας",
+      label: "Επιλεγμένη Συλλογή",
+      title: "Εξαιρετικές Εμπειρίες",
       subtitle:
-        "Από τον καφέ της ανατολής μέχρι τα κοκτέιλ του μεσονυκτίου, ανακαλύψτε τις προσεκτικά επιμελημένες επιλογές μας",
-      coffee: {
-        title: "Καφές & Πρωινό",
-        description:
-          "Ξεκινήστε τη μέρα σας με τον expertly ζυθισμένο καφέ και τις νόστιμες επιλογές πρωινού μας.",
-        highlights: [
-          "Artisan espresso & ειδικά ροφήματα καφέ",
-          "Φρέσκα αρτοσκευάσματα & μεσογειακό πρωινό",
-          "Σπιτικές τηγανίτες & υγιεινές επιλογές",
-          "Δωρεάν λιχουδιές με τον πρωινό καφέ",
-        ],
-      },
-      drinks: {
-        title: "Μπίρα, Κρασί & Αποστάγματα",
-        description:
-          "Προσεκτικά επιμελημένη επιλογή τοπικών και διεθνών ποτών.",
-        highlights: [
-          "Τοπικά ελληνικά κρασιά & κρητικές ποικιλίες",
-          "Craft μπίρες & διεθνείς επιλογές",
-          "Premium αποστάγματα & παλαιωμένες επιλογές",
-          "Συνδυασμοί κρασιού με τοπικό τυρί & ελιές",
-        ],
-      },
-      cocktails: {
-        title: "Κοκτέιλ & Νυχτερινές Εκδηλώσεις",
-        description: "Χειροποίητα κοκτέιλ και ζωντανή νυχτερινή διασκέδαση.",
-        highlights: [
-          "Χαρακτηριστικά κοκτέιλ με τοπικά υλικά",
-          "Κλασική & σύγχρονη μιξολογία",
-          "Ζωντανά DJ sets & θεματικά πάρτι",
-          "Νυχτερινή ατμόσφαιρα μέχρι τις 3 πμ",
-        ],
-      },
-      viewFullMenu: "Δείτε το Πλήρες Μενού",
+        "Κάθε προσφορά αφηγείται μια ιστορία δεξιοτεχνίας, ποιότητας και δημιουργικού πάθους.",
+      viewFull: "Δείτε το Πλήρες Μενού",
     },
-    events: {
-      title: "Εκδηλώσεις & Διασκέδαση",
-      subtitle:
-        "Ζήστε τη ζωντανή νυχτερινή ζωή και τις ειδικές εκδηλώσεις που κάνουν το Bonobo μοναδικό",
+
+    // Experience section
+    experience: {
+      label: "Καθημερινός Ρυθμός",
+      title: "Από την Αυγή μέχρι τα Μεσάνυχτα",
       description:
-        "Το πρόγραμμά μας μεταμορφώνεται καθ' όλη τη διάρκεια της εβδομάδας, από χαλαρές συνεδρίες brunch μέχρι ενεργητικές βραδιές DJ. Φιλοξενούμε τακτικές θεματικές εκδηλώσεις, παραστάσεις ζωντανής μουσικής και ειδικούς εορτασμούς που φέρνουν κοντά ντόπιους και επισκέπτες στο μοναδικό μας παραθαλάσσιο περιβάλλον.",
-      items: [
-        {
-          time: "Καθημερινά 9ΠΜ-3ΜΜ",
-          title: "Ολοήμερη Υπηρεσία Καφέ",
-          description:
-            "Καφές, brunch και ελαφριά γεύματα σε μια χαλαρή παραθαλάσσια ατμόσφαιρα με απαλή lounge μουσική.",
-        },
-        {
-          time: "Βράδια 6ΜΜ+",
-          title: "Ώρα Κοκτέιλ",
-          description:
-            "Μετάβαση στη βραδινή διάθεση με craft κοκτέιλ και μια πιο ζωντανή κοινωνική ατμόσφαιρα.",
-        },
-        {
-          time: "Σαββατοκύριακα",
-          title: "Ζωντανά DJ Sets",
-          description:
-            "Electronic, soul και Afro-house μουσική με τοπικούς και guest DJs που δημιουργούν την τέλεια beach party διάθεση.",
-        },
-        {
-          time: "Ειδικές Εκδηλώσεις",
-          title: "Θεματικές Βραδιές",
-          description:
-            "Εποχιακές γιορτές, γευστικές κρασιού και αποκλειστικά πάρτι με το καλύτερο της κρητικής φιλοξενίας.",
-        },
-      ],
+        "Ο χώρος μας μεταμορφώνεται καθ' όλη τη διάρκεια της ημέρας, κάθε στιγμή προσφέρει τη δική της μοναδική ενέργεια και ατμόσφαιρα.",
     },
+
+    // Contact section
     contact: {
-      title: "Επισκεφθείτε μας",
-      subtitle:
-        "Θα μας βρείτε στην όμορφη παραλία της Παλιάς Πόλης του Ρεθύμνου",
-      location: {
-        title: "Τοποθεσία",
-        address: "Ελευθερίου Βενιζέλου 47, Ρέθυμνο 74100, Κρήτη, Ελλάδα",
-      },
-      phone: {
-        title: "Τηλέφωνο",
-        number: "+30 693 246 7584",
-      },
-      hours: {
-        title: "Ώρες Λειτουργίας",
-        time: "Καθημερινά 9:00 ΠΜ - 3:00 ΠΜ",
-      },
+      label: "Επισκεφθείτε μας",
+      title: "Βρείτε τη Στιγμή σας",
     },
+
+    // Footer
     footer: {
-      description:
-        "Ζήστε τον τέλειο συνδυασμό vintage γοητείας και σύγχρονης άνεσης στον κορυφαίο παραθαλάσσιο προορισμό του Ρεθύμνου.",
+      tagline:
+        "Δημιουργώντας εξαιρετικές στιγμές στην πιο όμορφη παραλία του Ρεθύμνου.",
       contact: {
         title: "Επικοινωνία",
-        phone: "+30 693 246 7584",
-        email: "info@bonobobar.gr",
         address: "Ελευθερίου Βενιζέλου 47, Ρέθυμνο",
+        phone: "+30 693 246 7584",
+        email: "hello@bonobobar.gr",
       },
       hours: {
         title: "Ώρες",
-        daily: "Ανοιχτά Καθημερινά",
-        time: "9:00 ΠΜ - 3:00 ΠΜ",
-      },
-      social: {
-        title: "Ακολουθήστε μας",
+        daily: "Καθημερινά",
+        time: "9:00 ΠΜ — 3:00 ΠΜ",
       },
       rights: "Όλα τα δικαιώματα διατηρούνται.",
       privacy: "Ρυθμίσεις Απορρήτου",
     },
+
+    // UI elements
+    switchLang: "Αλλαγή σε Αγγλικά",
+    switchTheme: "Αλλαγή θέματος",
   },
 };
 
-// Alpine.js Store Initialization
+// Application data
+const appData = {
+  // Navigation items
+  navigation: [
+    { id: "about", href: "#about", target: "#about", key: "about" },
+    { id: "menu", href: "#menu", target: "#menu", key: "menu" },
+    {
+      id: "experience",
+      href: "#experience",
+      target: "#experience",
+      key: "experience",
+    },
+    { id: "contact", href: "#contact", target: "#contact", key: "contact" },
+  ],
+
+  // Features data
+  features: [
+    {
+      id: "location",
+      icon: "🏖️",
+      title: { en: "Beachfront Paradise", el: "Παραθαλάσσιος Παράδεισος" },
+      description: {
+        en: "Prime location on Rethymno's most beautiful stretch of beach with unobstructed Mediterranean views.",
+        el: "Προνομιακή τοποθεσία στο πιο όμορφο τμήμα της παραλίας του Ρεθύμνου με ανεμπόδιστη θέα στη Μεσόγειο.",
+      },
+    },
+    {
+      id: "experience",
+      icon: "🌅",
+      title: { en: "All-Day Journey", el: "Ολοήμερο Ταξίδι" },
+      description: {
+        en: "Seamlessly transition from morning coffee rituals to evening cocktail ceremonies.",
+        el: "Απρόσκοπτη μετάβαση από πρωινά τελετουργικά καφέ σε βραδινές τελετές κοκτέιλ.",
+      },
+    },
+    {
+      id: "craft",
+      icon: "🌿",
+      title: { en: "Local Craft", el: "Τοπική Τέχνη" },
+      description: {
+        en: "Authentic Cretan ingredients meet contemporary culinary techniques.",
+        el: "Αυθεντικά κρητικά υλικά συναντούν σύγχρονες γαστρονομικές τεχνικές.",
+      },
+    },
+    {
+      id: "culture",
+      icon: "🎵",
+      title: { en: "Cultural Hub", el: "Πολιτιστικό Κέντρο" },
+      description: {
+        en: "Regular events, live performances, and curated musical experiences.",
+        el: "Τακτικές εκδηλώσεις, ζωντανές παραστάσεις και επιμελημένες μουσικές εμπειρίες.",
+      },
+    },
+  ],
+
+  // Menu items
+  menuItems: [
+    {
+      id: "coffee",
+      title: { en: "Coffee & Morning", el: "Καφές & Πρωί" },
+      description: {
+        en: "Artisan coffee culture",
+        el: "Κουλτούρα artisan καφέ",
+      },
+      image: "./assets/images/coffee-breakfast.jpg",
+      highlights: {
+        en: [
+          "Single-origin espresso",
+          "Fresh Mediterranean breakfast",
+          "Homemade pastries",
+        ],
+        el: [
+          "Espresso μονής προέλευσης",
+          "Φρέσκο μεσογειακό πρωινό",
+          "Σπιτικά γλυκίσματα",
+        ],
+      },
+    },
+    {
+      id: "drinks",
+      title: { en: "Wines & Spirits", el: "Κρασιά & Αποστάγματα" },
+      description: {
+        en: "Curated liquid experiences",
+        el: "Επιμελημένες υγρές εμπειρίες",
+      },
+      image: "./assets/images/beer-wine-spirits.jpg",
+      highlights: {
+        en: ["Cretan wine selection", "Premium spirits", "Craft beer rotation"],
+        el: [
+          "Επιλογή κρητικών κρασιών",
+          "Premium αποστάγματα",
+          "Craft beer rotation",
+        ],
+      },
+    },
+    {
+      id: "cocktails",
+      title: { en: "Cocktails & Evening", el: "Κοκτέιλ & Βράδυ" },
+      description: { en: "Mixology as art form", el: "Μιξολογία ως τέχνη" },
+      image: "./assets/images/cocktails-events.jpg",
+      highlights: {
+        en: [
+          "Signature creations",
+          "Classic interpretations",
+          "Local ingredients",
+        ],
+        el: [
+          "Χαρακτηριστικές δημιουργίες",
+          "Κλασικές ερμηνείες",
+          "Τοπικά υλικά",
+        ],
+      },
+    },
+  ],
+
+  // Experience timeline
+  experiences: [
+    {
+      id: "morning",
+      time: { en: "9:00 AM", el: "9:00 ΠΜ" },
+      title: { en: "Morning Ritual", el: "Πρωινό Τελετουργικό" },
+      description: {
+        en: "Coffee ceremonies and Mediterranean breakfast in serene beachfront setting.",
+        el: "Τελετουργικά καφέ και μεσογειακό πρωινό σε γαλήνιο παραθαλάσσιο περιβάλλον.",
+      },
+    },
+    {
+      id: "afternoon",
+      time: { en: "2:00 PM", el: "2:00 ΜΜ" },
+      title: { en: "Afternoon Flow", el: "Απογευματινή Ροή" },
+      description: {
+        en: "Light meals, refreshing drinks, and contemplative moments by the sea.",
+        el: "Ελαφριά γεύματα, αναζωογονητικά ποτά και στιγμές συλλογισμού δίπλα στη θάλασσα.",
+      },
+    },
+    {
+      id: "evening",
+      time: { en: "7:00 PM", el: "7:00 ΜΜ" },
+      title: { en: "Evening Transformation", el: "Βραδινή Μεταμόρφωση" },
+      description: {
+        en: "Sophisticated cocktails and elevated atmosphere as day becomes night.",
+        el: "Εκλεπτυσμένα κοκτέιλ και υψηλή ατμόσφαιρα καθώς η μέρα γίνεται νύχτα.",
+      },
+    },
+    {
+      id: "night",
+      time: { en: "10:00 PM", el: "10:00 ΜΜ" },
+      title: { en: "Night Energy", el: "Νυχτερινή Ενέργεια" },
+      description: {
+        en: "Live music, DJ sets, and vibrant social energy until the early hours.",
+        el: "Ζωντανή μουσική, DJ sets και ζωντανή κοινωνική ενέργεια μέχρι τις πρώτες ώρες.",
+      },
+    },
+  ],
+
+  // Contact information
+  contactInfo: [
+    {
+      id: "location",
+      icon: "📍",
+      title: { en: "Location", el: "Τοποθεσία" },
+      value: {
+        en: "Beachfront, Old Town Rethymno",
+        el: "Παραλία, Παλιά Πόλη Ρεθύμνου",
+      },
+      link: "https://maps.google.com/?q=Bonobo+Bar+Rethymno",
+      linkText: { en: "Get Directions", el: "Οδηγίες" },
+    },
+    {
+      id: "phone",
+      icon: "📞",
+      title: { en: "Reservations", el: "Κρατήσεις" },
+      value: "+30 693 246 7584",
+      link: "tel:+306932467584",
+      linkText: { en: "Call Now", el: "Καλέστε τώρα" },
+    },
+    {
+      id: "hours",
+      icon: "🕒",
+      title: { en: "Open Daily", el: "Ανοιχτά Καθημερινά" },
+      value: { en: "9:00 AM — 3:00 AM", el: "9:00 ΠΜ — 3:00 ΠΜ" },
+      link: null,
+      linkText: null,
+    },
+  ],
+};
+
+// Alpine.js application
 document.addEventListener("alpine:init", () => {
-  // UI Store for responsive behavior
-  Alpine.store("ui", {
-    isMobile: window.innerWidth < 768,
-    isTablet: window.innerWidth >= 768 && window.innerWidth < 1024,
-    isDesktop: window.innerWidth >= 1024,
-
-    // Update responsiveness on window resize
-    updateBreakpoints() {
-      this.isMobile = window.innerWidth < 768;
-      this.isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-      this.isDesktop = window.innerWidth >= 1024;
-    },
-  });
-
-  // Theme Store
-  Alpine.store("theme", {
-    current: localStorage.getItem("bonobo-theme") || "light",
-
-    toggle() {
-      this.current = this.current === "light" ? "dark" : "light";
-      this.apply();
-    },
-
-    apply() {
-      document.documentElement.setAttribute("data-theme", this.current);
-      localStorage.setItem("bonobo-theme", this.current);
-    },
-
-    init() {
-      this.apply();
-    },
-  });
-
-  // Language Store
-  Alpine.store("language", {
-    current: localStorage.getItem("bonobo-language") || "en",
-
-    toggle() {
-      this.current = this.current === "en" ? "el" : "en";
-      this.apply();
-    },
-
-    apply() {
-      document.documentElement.setAttribute("lang", this.current);
-      localStorage.setItem("bonobo-language", this.current);
-    },
-
-    init() {
-      this.apply();
-    },
-  });
-
-  // Navigation Store
-  Alpine.store("navigation", {
-    isScrolled: false,
-
-    init() {
-      this.updateScrollState();
-      window.addEventListener("scroll", () => {
-        this.updateScrollState();
-      });
-    },
-
-    updateScrollState() {
-      this.isScrolled = window.scrollY > 50;
-    },
-  });
-});
-
-// Main Alpine.js Component
-function bonobobar() {
-  return {
+  Alpine.data("app", () => ({
     // State
-    currentLang: Alpine.store("language").current,
-    currentTheme: Alpine.store("theme").current,
-    showBackToTop: false,
-    lastScrollY: 0,
+    currentLang: localStorage.getItem("bonobo-lang") || "en",
+    currentTheme: localStorage.getItem("bonobo-theme") || "dark",
+    scrollY: 0,
+    heroLoaded: false,
+    mobileMenuOpen: false,
 
-    // Content
-    content: content[Alpine.store("language").current],
+    // Computed properties
+    get t() {
+      return translations[this.currentLang];
+    },
 
-    // Initialize component
+    get isDark() {
+      return this.currentTheme === "dark";
+    },
+
+    get isMobile() {
+      return window.innerWidth < 768;
+    },
+
+    get showNav() {
+      return this.scrollY > 50;
+    },
+
+    get showFab() {
+      return this.scrollY > 1000;
+    },
+
+    // Data properties
+    navigation: appData.navigation,
+
+    get features() {
+      return appData.features.map((feature) => ({
+        ...feature,
+        title: feature.title[this.currentLang],
+        description: feature.description[this.currentLang],
+      }));
+    },
+
+    get menuItems() {
+      return appData.menuItems.map((item) => ({
+        ...item,
+        title: item.title[this.currentLang],
+        description: item.description[this.currentLang],
+        highlights: item.highlights[this.currentLang],
+      }));
+    },
+
+    get experiences() {
+      return appData.experiences.map((exp) => ({
+        ...exp,
+        time: exp.time[this.currentLang],
+        title: exp.title[this.currentLang],
+        description: exp.description[this.currentLang],
+      }));
+    },
+
+    get contactInfo() {
+      return appData.contactInfo.map((contact) => ({
+        ...contact,
+        title: contact.title[this.currentLang],
+        value:
+          typeof contact.value === "object"
+            ? contact.value[this.currentLang]
+            : contact.value,
+        linkText: contact.linkText ? contact.linkText[this.currentLang] : null,
+      }));
+    },
+
+    // Initialization
     init() {
-      // Initialize stores
-      Alpine.store("theme").init();
-      Alpine.store("language").init();
-      Alpine.store("navigation").init();
+      this.setupTheme();
+      this.setupScrollTracking();
+      this.setupIntersectionObserver();
+      this.setupKeyboardShortcuts();
+      this.preloadAssets();
 
-      // Update content when language changes
-      this.$watch("$store.language.current", (newLang) => {
-        this.currentLang = newLang;
-        this.content = content[newLang];
-      });
+      // Hero animation trigger
+      setTimeout(() => {
+        this.heroLoaded = true;
+      }, 300);
 
-      // Update theme when it changes
-      this.$watch("$store.theme.current", (newTheme) => {
-        this.currentTheme = newTheme;
-      });
+      // Performance monitoring
+      this.trackPerformance();
 
-      // Scroll handling
-      this.handleScroll();
-      window.addEventListener("scroll", () => this.handleScroll());
-
-      // Resize handling
-      window.addEventListener("resize", () => {
-        Alpine.store("ui").updateBreakpoints();
-      });
-
-      // Smooth scroll polyfill for older browsers
-      this.initSmoothScroll();
-
-      // Initialize intersection observer for animations
-      this.initScrollAnimations();
-
-      // Preload critical images
-      this.preloadImages();
-
-      console.log("🐒 Bonobo Bar website initialized successfully!");
+      console.log("🐒 Bonobo Bar — Modern experience initialized");
     },
 
-    // Theme Management
+    // Theme management
+    setupTheme() {
+      document.documentElement.setAttribute("data-theme", this.currentTheme);
+      document.documentElement.setAttribute("lang", this.currentLang);
+    },
+
     toggleTheme() {
-      Alpine.store("theme").toggle();
+      this.currentTheme = this.isDark ? "light" : "dark";
+      localStorage.setItem("bonobo-theme", this.currentTheme);
+      document.documentElement.setAttribute("data-theme", this.currentTheme);
+      this.trackEvent("theme_toggle", { theme: this.currentTheme });
     },
 
-    // Language Management
+    // Language management
     toggleLanguage() {
-      Alpine.store("language").toggle();
+      this.currentLang = this.currentLang === "en" ? "el" : "en";
+      localStorage.setItem("bonobo-lang", this.currentLang);
+      document.documentElement.setAttribute("lang", this.currentLang);
+      this.trackEvent("language_change", { language: this.currentLang });
     },
 
-    // Scroll Management
-    handleScroll() {
-      const currentScrollY = window.scrollY;
+    // Scroll tracking
+    setupScrollTracking() {
+      const updateScroll = () => {
+        this.scrollY = window.scrollY;
+      };
 
-      // Back to top button visibility
-      this.showBackToTop = currentScrollY > 300;
-
-      // Update navigation scroll state
-      Alpine.store("navigation").updateScrollState();
-
-      this.lastScrollY = currentScrollY;
+      window.addEventListener("scroll", updateScroll, { passive: true });
+      updateScroll();
     },
 
-    // Navigation Methods
-    scrollToSection(selector) {
-      const element = document.querySelector(selector);
+    // Intersection Observer for animations
+    setupIntersectionObserver() {
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+        );
+
+        // Observe elements after DOM is ready
+        this.$nextTick(() => {
+          document.querySelectorAll("[x-intersect]").forEach((el) => {
+            observer.observe(el);
+          });
+        });
+      }
+    },
+
+    // Keyboard shortcuts
+    setupKeyboardShortcuts() {
+      document.addEventListener("keydown", (e) => {
+        // ESC to close mobile menu
+        if (e.key === "Escape" && this.mobileMenuOpen) {
+          this.closeMobileMenu();
+        }
+
+        // T for theme toggle
+        if (e.key === "t" && (e.metaKey || e.ctrlKey)) {
+          e.preventDefault();
+          this.toggleTheme();
+        }
+
+        // L for language toggle
+        if (e.key === "l" && (e.metaKey || e.ctrlKey)) {
+          e.preventDefault();
+          this.toggleLanguage();
+        }
+      });
+    },
+
+    // Navigation methods
+    scrollToSection(target) {
+      const element = document.querySelector(target);
       if (element) {
-        const headerHeight = 64; // Height of fixed header
-        const targetPosition = element.offsetTop - headerHeight;
+        const offset = 80; // Account for fixed nav
+        const elementPosition = element.offsetTop - offset;
 
         window.scrollTo({
-          top: targetPosition,
+          top: elementPosition,
           behavior: "smooth",
         });
+
+        this.trackEvent("navigation", { target: target.replace("#", "") });
       }
     },
 
     scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      this.trackEvent("scroll_to_top");
     },
 
-    // Smooth scroll polyfill for browsers that don't support it
-    initSmoothScroll() {
-      // Check if browser supports smooth scrolling
-      if (!("scrollBehavior" in document.documentElement.style)) {
-        // Import smooth scroll polyfill if needed
-        const script = document.createElement("script");
-        script.src =
-          "https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js";
-        script.onload = () => {
-          window.__forceSmoothScrollPolyfill__ = true;
-          window.smoothscroll.polyfill();
-        };
-        document.head.appendChild(script);
+    // Mobile menu
+    toggleMobileMenu() {
+      this.mobileMenuOpen = !this.mobileMenuOpen;
+      document.body.style.overflow = this.mobileMenuOpen ? "hidden" : "";
+    },
+
+    closeMobileMenu() {
+      this.mobileMenuOpen = false;
+      document.body.style.overflow = "";
+    },
+
+    // External actions
+    openMenu() {
+      window.open(
+        "https://anastasios3.github.io/BONOBO_BAR_QRCODE/",
+        "_blank",
+        "noopener,noreferrer"
+      );
+      this.trackEvent("menu_open");
+    },
+
+    openPrivacy() {
+      if (window.bmOpen) {
+        window.bmOpen();
+      } else {
+        console.log("Privacy settings not available yet");
       }
     },
 
-    // Initialize scroll-triggered animations
-    initScrollAnimations() {
-      if ("IntersectionObserver" in window) {
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate-in");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
-
-        // Observe elements for animation
-        const animateElements = document.querySelectorAll(
-          ".feature, .menu-card, .event-item, .contact-item"
-        );
-
-        animateElements.forEach((el) => {
-          el.classList.add("animate-on-scroll");
-          observer.observe(el);
-        });
-      }
-    },
-
-    // Preload critical images for better performance
-    preloadImages() {
+    // Performance and analytics
+    preloadAssets() {
       const criticalImages = [
-        "./assets/images/bonobo-hero-desktop.webp",
-        "./assets/images/bonobo-hero-mobile.webp",
-        "./assets/images/coffee-breakfast.webp",
-        "./assets/images/beer-wine-spirits.webp",
-        "./assets/images/cocktails-events.webp",
+        "./assets/images/coffee-breakfast.jpg",
+        "./assets/images/beer-wine-spirits.jpg",
+        "./assets/images/cocktails-events.jpg",
       ];
 
       criticalImages.forEach((src) => {
@@ -566,105 +572,115 @@ function bonobobar() {
       });
     },
 
-    // Utility: Format phone number for display
-    formatPhone(phone) {
-      return phone.replace(/(\+30)(\d{3})(\d{3})(\d{4})/, "$1 $2 $3 $4");
-    },
-
-    // Utility: Open external link safely
-    openExternalLink(url) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    },
-
-    // Contact form handler (if needed later)
-    handleContactForm(formData) {
-      // This can be expanded to handle contact form submissions
-      console.log("Contact form submitted:", formData);
-    },
-
-    // Analytics helper (for when analytics are implemented)
-    trackEvent(event, properties = {}) {
-      // Integration point for analytics
-      if (window.gtag) {
-        window.gtag("event", event, properties);
-      }
-
-      if (window.Consent && window.Consent.analytics) {
-        // Only track if analytics consent is given
-        console.log("Tracking event:", event, properties);
-      }
-    },
-
-    // Performance monitoring
-    measurePerformance() {
+    trackPerformance() {
       if ("performance" in window) {
         window.addEventListener("load", () => {
-          setTimeout(() => {
+          requestIdleCallback(() => {
             const perfData = performance.getEntriesByType("navigation")[0];
-            const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+            if (perfData) {
+              const metrics = {
+                loadTime: Math.round(
+                  perfData.loadEventEnd - perfData.loadEventStart
+                ),
+                domReady: Math.round(
+                  perfData.domContentLoadedEventEnd -
+                    perfData.domContentLoadedEventStart
+                ),
+                firstPaint:
+                  performance.getEntriesByType("paint")[0]?.startTime || 0,
+              };
 
-            console.log("🚀 Page load performance:", {
-              loadTime: `${loadTime}ms`,
-              domContentLoaded: `${
-                perfData.domContentLoadedEventEnd -
-                perfData.domContentLoadedEventStart
-              }ms`,
-              firstPaint:
-                performance.getEntriesByType("paint")[0]?.startTime || "N/A",
-            });
-          }, 0);
+              console.log("📊 Performance:", metrics);
+              this.trackEvent("performance", metrics);
+            }
+          });
         });
       }
     },
-  };
-}
 
-// CSS Animation Classes (to be added via CSS)
-const animationStyles = `
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .animate-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .stagger-animation:nth-child(1) { transition-delay: 0.1s; }
-    .stagger-animation:nth-child(2) { transition-delay: 0.2s; }
-    .stagger-animation:nth-child(3) { transition-delay: 0.3s; }
-    .stagger-animation:nth-child(4) { transition-delay: 0.4s; }
-  `;
+    trackEvent(name, data = {}) {
+      // Analytics integration point
+      if (window.gtag && window.Consent?.analytics) {
+        window.gtag("event", name, {
+          custom_parameter_1: JSON.stringify(data),
+          event_category: "bonobo_interaction",
+        });
+      }
 
-// Inject animation styles
-const styleSheet = document.createElement("style");
-styleSheet.textContent = animationStyles;
-document.head.appendChild(styleSheet);
+      console.log(`📈 Event: ${name}`, data);
+    },
 
-// Error handling and debugging
-window.addEventListener("error", (event) => {
-  console.error("JavaScript error:", event.error);
+    // Utility methods
+    formatPhoneNumber(phone) {
+      return phone.replace(/(\+30)(\d{3})(\d{3})(\d{4})/, "$1 $2 $3 $4");
+    },
 
-  // In production, you might want to send this to an error tracking service
-  if (window.Consent && window.Consent.analytics) {
-    // Track errors if analytics consent is given
-  }
+    copyToClipboard(text) {
+      navigator.clipboard?.writeText(text).then(() => {
+        console.log("📋 Copied to clipboard:", text);
+      });
+    },
+
+    // Development helpers
+    debugInfo() {
+      return {
+        language: this.currentLang,
+        theme: this.currentTheme,
+        scrollY: this.scrollY,
+        isMobile: this.isMobile,
+        heroLoaded: this.heroLoaded,
+      };
+    },
+  }));
 });
 
-// PWA-like functionality (future enhancement)
-if ("serviceWorker" in navigator) {
+// Global utilities
+window.BonobobarApp = {
+  // Version info
+  version: "2.0.0",
+  buildDate: new Date().toISOString(),
+
+  // Feature detection
+  features: {
+    intersectionObserver: "IntersectionObserver" in window,
+    webp: (() => {
+      const canvas = document.createElement("canvas");
+      return canvas.toDataURL("image/webp").indexOf("data:image/webp") === 0;
+    })(),
+    touchDevice: "ontouchstart" in window,
+    prefersDarkMode: window.matchMedia("(prefers-color-scheme: dark)").matches,
+  },
+
+  // Expose data for debugging
+  translations,
+  appData,
+};
+
+// Error handling
+window.addEventListener("error", (event) => {
+  console.error("🚨 Application error:", event.error);
+  // Send to error tracking service in production
+});
+
+// Service Worker registration for PWA features
+if ("serviceWorker" in navigator && location.protocol === "https:") {
   window.addEventListener("load", () => {
-    // Service worker registration can be added here for offline functionality
-    console.log("💡 Service worker support detected - ready for PWA features");
+    console.log("💾 Service Worker support detected");
+    // navigator.serviceWorker.register('./sw.js') when ready
   });
 }
 
-// Performance monitoring
-bonobobar().measurePerformance();
+// Development mode detection
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+  console.log("🛠️ Development mode active");
+  window.addEventListener("keydown", (e) => {
+    if (
+      e.key === "F12" ||
+      (e.key === "i" && (e.metaKey || e.ctrlKey) && e.shiftKey)
+    ) {
+      console.log("🐒 Bonobo Debug Info:", window.BonobobarApp);
+    }
+  });
+}
 
-// Export for global access if needed
-window.BonobobarApp = { content, bonobobar };
-
-console.log("🍹 Bonobo Bar application loaded successfully!");
+console.log("🚀 Bonobo Bar — Modern experience ready!");
