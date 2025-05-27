@@ -1,0 +1,669 @@
+/**
+ * Bonobo Bar & More - Header & Navigation System
+ * Complete navigation component with accessibility and responsiveness
+ * 
+ * This file provides:
+ * - Fixed header with backdrop blur and theme adaptation
+ * - Responsive navigation with mobile hamburger menu
+ * - Theme toggle and language switcher components
+ * - Smooth scroll behavior and active states
+ * - Full accessibility support with ARIA compliance
+ */
+
+/* ================================
+   HEADER FOUNDATION
+   Fixed header with backdrop effects
+   ================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(250, 250, 250, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: var(--z-sticky);
+  transition: var(--transition-base);
+  will-change: transform, background-color;
+}
+
+/* Dark theme header adaptation */
+[data-theme="dark"] .header {
+  background: rgba(23, 23, 23, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Header scroll state - enhanced backdrop */
+.header--scrolled {
+  background: rgba(250, 250, 250, 0.95);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .header--scrolled {
+  background: rgba(23, 23, 23, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ================================
+     NAVIGATION CONTAINER
+     Main navigation layout structure
+     ================================ */
+
+.nav {
+  width: 100%;
+  height: 4.5rem;
+  position: relative;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .nav__container {
+    padding: 0 var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__container {
+    padding: 0 var(--space-8);
+  }
+}
+
+/* ================================
+     LOGO SECTION
+     Brand identity and home link
+     ================================ */
+
+.nav__logo {
+  flex-shrink: 0;
+  z-index: var(--z-dropdown);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  border-radius: var(--radius);
+  padding: var(--space-1);
+  margin: calc(-1 * var(--space-1));
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.logo__image {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+  transition: var(--transition-fast);
+}
+
+/* Logo text alternative */
+.logo__text {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-accent);
+  letter-spacing: -0.025em;
+}
+
+/* ================================
+     NAVIGATION CONTROLS
+     Theme toggle, language switcher, mobile menu
+     ================================ */
+
+.nav__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  z-index: var(--z-dropdown);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--text-inverse);
+  transform: rotate(15deg) scale(1.1);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle__icon {
+  display: block;
+  transition: var(--transition-base);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.theme-toggle__icon--light {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.theme-toggle__icon--dark {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Dark theme icon states */
+[data-theme="dark"] .theme-toggle__icon--light {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle__icon--dark {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* ================================
+     LANGUAGE SWITCHER
+     Bilingual toggle component
+     ================================ */
+
+.language-switcher {
+  position: relative;
+}
+
+.language-switcher__toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  min-width: 4rem;
+}
+
+.language-switcher__toggle:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--text-inverse);
+}
+
+.language-switcher__toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.language-switcher__current {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+}
+
+.language-switcher__arrow {
+  font-size: 0.75rem;
+  transition: var(--transition-fast);
+  color: var(--text-tertiary);
+}
+
+.language-switcher__toggle[aria-expanded="true"] .language-switcher__arrow {
+  transform: rotate(180deg);
+  color: var(--text-inverse);
+}
+
+/* Language Dropdown Menu */
+.language-switcher__menu {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  min-width: 8rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.5rem);
+  transition: var(--transition-fast);
+  z-index: var(--z-dropdown);
+  overflow: hidden;
+}
+
+.language-switcher__toggle[aria-expanded="true"] + .language-switcher__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-switcher__option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-align: left;
+}
+
+.language-switcher__option:hover {
+  background: var(--bg-secondary);
+  color: var(--color-accent);
+}
+
+.language-switcher__option[aria-pressed="true"] {
+  background: var(--color-accent);
+  color: var(--text-inverse);
+  font-weight: var(--font-weight-semibold);
+}
+
+.language-switcher__option:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+/* ================================
+     MOBILE MENU TOGGLE
+     Hamburger menu button for mobile navigation
+     ================================ */
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  gap: 0.25rem;
+  padding: var(--space-2);
+}
+
+.nav__toggle:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.nav__toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.nav__toggle-bar {
+  width: 1.25rem;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 1px;
+  transition: var(--transition-fast);
+  transform-origin: center;
+}
+
+.nav__toggle:hover .nav__toggle-bar {
+  background: var(--text-inverse);
+}
+
+/* Animated hamburger states */
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(1) {
+  transform: translateY(0.375rem) rotate(45deg);
+}
+
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3) {
+  transform: translateY(-0.375rem) rotate(-45deg);
+}
+
+/* Show mobile toggle on smaller screens */
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: flex;
+  }
+}
+
+/* ================================
+     NAVIGATION MENU
+     Main navigation links
+     ================================ */
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius);
+  transition: var(--transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav__link:hover {
+  color: var(--color-accent);
+  background: rgba(94, 84, 142, 0.1);
+}
+
+[data-theme="dark"] .nav__link:hover {
+  background: rgba(190, 149, 196, 0.1);
+}
+
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Active link styling */
+.nav__link--active,
+.nav__link[aria-current="page"] {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.nav__link--active::after,
+.nav__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+}
+
+/* ================================
+     MOBILE NAVIGATION
+     Responsive menu for mobile devices
+     ================================ */
+
+@media (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-6) var(--space-4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1rem);
+    transition: var(--transition-base);
+    overflow-y: auto;
+    z-index: var(--z-overlay);
+  }
+
+  .nav__toggle[aria-expanded="true"] ~ .nav__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav__item {
+    border-bottom: 1px solid var(--border-primary);
+  }
+
+  .nav__item:last-child {
+    border-bottom: none;
+  }
+
+  .nav__link {
+    padding: var(--space-4) var(--space-3);
+    font-size: var(--text-lg);
+    justify-content: center;
+    border-radius: 0;
+  }
+
+  .nav__link--active::after,
+  .nav__link[aria-current="page"]::after {
+    display: none;
+  }
+
+  .nav__link--active,
+  .nav__link[aria-current="page"] {
+    background: var(--bg-secondary);
+  }
+}
+
+/* Mobile menu backdrop */
+@media (max-width: 768px) {
+  .nav__toggle[aria-expanded="true"]::before {
+    content: "";
+    position: fixed;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-overlay) - 1);
+    opacity: 1;
+    transition: var(--transition-base);
+  }
+}
+
+/* ================================
+     ACCESSIBILITY ENHANCEMENTS
+     Screen reader and keyboard navigation support
+     ================================ */
+
+/* Skip navigation link */
+.nav__skip {
+  position: absolute;
+  top: -40px;
+  left: var(--space-4);
+  background: var(--color-accent);
+  color: var(--text-inverse);
+  padding: var(--space-2) var(--space-4);
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: var(--font-weight-medium);
+  z-index: var(--z-toast);
+  transition: var(--transition-fast);
+}
+
+.nav__skip:focus {
+  top: var(--space-2);
+}
+
+/* Screen reader announcements */
+.nav__sr-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ================================
+     HEADER ANIMATIONS
+     Smooth state transitions and micro-interactions
+     ================================ */
+
+/* Header slide-in animation */
+@keyframes headerSlideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  animation: headerSlideIn 0.3s ease-out;
+}
+
+/* Mobile menu slide animation */
+@media (max-width: 768px) {
+  @keyframes mobileMenuSlide {
+    from {
+      opacity: 0;
+      transform: translateY(-1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav__toggle[aria-expanded="true"] ~ .nav__menu {
+    animation: mobileMenuSlide 0.3s ease-out;
+  }
+}
+
+/* ================================
+     SCROLL BEHAVIOR
+     Header state changes on scroll
+     ================================ */
+
+/* Hide header on scroll down, show on scroll up */
+.header--hidden {
+  transform: translateY(-100%);
+}
+
+.header--visible {
+  transform: translateY(0);
+}
+
+/* ================================
+     REDUCED MOTION SUPPORT
+     Accessibility for motion-sensitive users
+     ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    animation: none;
+  }
+
+  .theme-toggle:hover {
+    transform: none;
+  }
+
+  .nav__toggle-bar,
+  .language-switcher__arrow,
+  .language-switcher__menu {
+    transition: none;
+  }
+
+  .nav__menu {
+    transition: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav__menu {
+      animation: none;
+    }
+  }
+}
+
+/* ================================
+     PRINT STYLES
+     Header optimization for print media
+     ================================ */
+
+@media print {
+  .header {
+    position: static;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none;
+  }
+
+  .nav__controls,
+  .nav__toggle {
+    display: none !important;
+  }
+
+  .nav__menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: transparent !important;
+    flex-direction: row !important;
+    gap: var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .nav__link {
+    color: black !important;
+    padding: var(--space-1) !important;
+  }
+}

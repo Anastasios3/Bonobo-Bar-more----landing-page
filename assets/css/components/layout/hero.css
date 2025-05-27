@@ -1,0 +1,646 @@
+/**
+ * Bonobo Bar & More - Hero Section
+ * Complete hero component with stunning visual effects
+ * 
+ * This file provides:
+ * - Full-viewport hero with responsive background images
+ * - Sophisticated overlay and gradient effects
+ * - Animated text with gradient treatments
+ * - Responsive typography and spacing
+ * - Scroll indicators and parallax-ready structure
+ * - Accessibility-compliant contrast and focus states
+ */
+
+/* ================================
+   HERO FOUNDATION
+   Full-viewport hero container
+   ================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate; /* Create new stacking context */
+}
+
+/* Adjust height to account for fixed header */
+.hero {
+  padding-top: 4.5rem;
+  min-height: calc(100vh - 4.5rem);
+}
+
+/* Full viewport on larger screens */
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 0;
+  }
+}
+
+/* ================================
+     BACKGROUND SYSTEM
+     Layered background with images and overlays
+     ================================ */
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 8s ease-out;
+  will-change: transform;
+}
+
+/* Subtle zoom effect on load */
+.hero__image {
+  transform: scale(1.02);
+}
+
+.hero.loaded .hero__image {
+  transform: scale(1);
+}
+
+/* Responsive image positioning */
+@media (max-width: 768px) {
+  .hero__image {
+    object-position: center bottom;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__image {
+    object-position: center center;
+  }
+}
+
+/* ================================
+     OVERLAY SYSTEM
+     Sophisticated gradient overlays for contrast
+     ================================ */
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(35, 25, 66, 0.8) 0%,
+    rgba(35, 25, 66, 0.6) 30%,
+    rgba(94, 84, 142, 0.4) 70%,
+    rgba(35, 25, 66, 0.7) 100%
+  );
+}
+
+/* Enhanced overlay for dark theme */
+[data-theme="dark"] .hero__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(23, 23, 23, 0.7) 0%,
+    rgba(35, 25, 66, 0.8) 30%,
+    rgba(94, 84, 142, 0.5) 70%,
+    rgba(23, 23, 23, 0.8) 100%
+  );
+}
+
+/* Additional texture overlay for depth */
+.hero__overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+/* ================================
+     CONTENT CONTAINER
+     Centered content with responsive spacing
+     ================================ */
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--text-inverse);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4) var(--space-12);
+  animation: heroContentSlide 1s ease-out 0.3s both;
+}
+
+@keyframes heroContentSlide {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive content spacing */
+@media (min-width: 640px) {
+  .hero__content {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__content {
+    padding: var(--space-16) var(--space-8) var(--space-20);
+  }
+}
+
+/* ================================
+     TYPOGRAPHY SYSTEM
+     Sophisticated text treatments with gradients
+     ================================ */
+
+.hero__text {
+  margin-bottom: var(--space-8);
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: var(--font-weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+  margin-bottom: var(--space-6);
+
+  /* Gradient text effect */
+  background: linear-gradient(135deg, #ffffff 0%, #be95c4 50%, #e0b1cb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Fallback for unsupported browsers */
+  color: var(--text-inverse);
+
+  /* Animation */
+  animation: heroTitleSlide 1.2s ease-out 0.5s both;
+}
+
+@keyframes heroTitleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Enhanced gradient for dark theme */
+[data-theme="dark"] .hero__title {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #be95c4 30%,
+    #e0b1cb 70%,
+    #ffffff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__subtitle {
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: var(--space-4);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: heroSubtitleSlide 1s ease-out 0.7s both;
+}
+
+@keyframes heroSubtitleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__description {
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  animation: heroDescriptionSlide 1s ease-out 0.9s both;
+}
+
+@keyframes heroDescriptionSlide {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+     CALL-TO-ACTION SECTION
+     Hero buttons with enhanced styling
+     ================================ */
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+  animation: heroActionsSlide 1s ease-out 1.1s both;
+}
+
+@keyframes heroActionsSlide {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced hero button styling */
+.hero__actions .btn {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero__actions .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.hero__actions .btn:hover::before {
+  left: 100%;
+}
+
+/* Primary CTA styling */
+.hero__actions .btn--primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--brand-primary) 100%
+  );
+  box-shadow: 0 8px 32px rgba(94, 84, 142, 0.3);
+  border-color: var(--color-accent);
+}
+
+.hero__actions .btn--primary:hover {
+  box-shadow: 0 12px 40px rgba(94, 84, 142, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Secondary CTA styling */
+.hero__actions .btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hero__actions .btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Mobile button adjustments */
+@media (max-width: 640px) {
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ================================
+     SCROLL INDICATOR
+     Animated scroll prompt
+     ================================ */
+
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255, 255, 255, 0.8);
+  animation: heroScrollSlide 1s ease-out 1.5s both;
+}
+
+@keyframes heroScrollSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.hero__scroll-text {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-1);
+}
+
+.hero__scroll-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+  animation: heroScrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes heroScrollBounce {
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(45deg) translateY(0.5rem);
+    opacity: 1;
+  }
+}
+
+/* Hide scroll indicator on very small screens */
+@media (max-height: 600px) {
+  .hero__scroll {
+    display: none;
+  }
+}
+
+/* ================================
+     PARALLAX PREPARATION
+     Structure for optional parallax effects
+     ================================ */
+
+.hero--parallax .hero__background {
+  transform: translateZ(0); /* Enable hardware acceleration */
+  will-change: transform;
+}
+
+.hero--parallax .hero__content {
+  transform: translateZ(0); /* Enable hardware acceleration */
+  will-change: transform;
+}
+
+/* ================================
+     VIDEO BACKGROUND SUPPORT
+     Alternative to image backgrounds
+     ================================ */
+
+.hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+/* Hide video on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero__video {
+    display: none;
+  }
+}
+
+/* ================================
+     ACCESSIBILITY ENHANCEMENTS
+     Screen reader and navigation support
+     ================================ */
+
+/* Focus management for skip links */
+.hero:target {
+  scroll-margin-top: 5rem;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero__overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .hero__title {
+    background: none;
+    color: white !important;
+    -webkit-text-fill-color: white;
+  }
+
+  .hero__subtitle,
+  .hero__description {
+    color: white;
+  }
+}
+
+/* ================================
+     LOADING STATES
+     Progressive enhancement and performance
+     ================================ */
+
+.hero.loading .hero__content {
+  opacity: 0;
+}
+
+.hero.loading .hero__image {
+  filter: blur(2px);
+  transform: scale(1.1);
+}
+
+/* Skeleton loading for hero content */
+.hero.loading .hero__title::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 3rem;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  border-radius: var(--radius);
+  margin: 0 auto;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+/* ================================
+     REDUCED MOTION SUPPORT
+     Accessibility for motion-sensitive users
+     ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__image {
+    transition: none;
+    transform: none;
+  }
+
+  .hero.loaded .hero__image {
+    transform: none;
+  }
+
+  .hero__content,
+  .hero__title,
+  .hero__subtitle,
+  .hero__description,
+  .hero__actions,
+  .hero__scroll {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .hero__scroll-arrow {
+    animation: none;
+  }
+
+  .hero__actions .btn::before {
+    display: none;
+  }
+
+  /* Static gradient for reduced motion */
+  .hero__title {
+    background: var(--color-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* ================================
+     PRINT STYLES
+     Hero optimization for print media
+     ================================ */
+
+@media print {
+  .hero {
+    min-height: auto;
+    padding: var(--space-8) 0;
+    background: white !important;
+    color: black !important;
+  }
+
+  .hero__background,
+  .hero__overlay,
+  .hero__video {
+    display: none !important;
+  }
+
+  .hero__title {
+    background: none !important;
+    color: black !important;
+    -webkit-text-fill-color: black !important;
+  }
+
+  .hero__subtitle,
+  .hero__description {
+    color: black !important;
+  }
+
+  .hero__actions {
+    display: none !important;
+  }
+
+  .hero__scroll {
+    display: none !important;
+  }
+}
+
+/* ================================
+     PERFORMANCE OPTIMIZATIONS
+     Critical rendering path improvements
+     ================================ */
+
+/* GPU acceleration for smooth animations */
+.hero__image,
+.hero__content,
+.hero__title {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize for 60fps animations */
+.hero__scroll-arrow,
+.hero__actions .btn::before {
+  will-change: transform, opacity;
+}
+
+/* Remove will-change after animations complete */
+.hero.animations-complete * {
+  will-change: auto;
+}
