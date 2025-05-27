@@ -1,0 +1,208 @@
+{
+  "business_name": "Bonobo Bar & More",
+  "legal_name": "Bonobo Bar & More - Rethymno",
+  "establishment_year": 2017,
+  "address": {
+    "street": "Eleftheríou Venizélou 47",
+    "city": "Rethymno",
+    "postal_code": "74100",
+    "region": "Crete",
+    "country": "Greece",
+    "country_code": "GR",
+    "formatted": {
+      "en": "Eleftheríou Venizélou 47, Rethymno 74100, Crete, Greece",
+      "gr": "Ελευθερίου Βενιζέλου 47, Ρέθυμνο 74100, Κρήτη, Ελλάδα"
+    }
+  },
+  "coordinates": {
+    "latitude": 35.3684422,
+    "longitude": 24.4769793,
+    "accuracy": "exact",
+    "elevation": 3,
+    "what3words": "///optimism.shipyards.drifted"
+  },
+  "contact_methods": {
+    "primary_phone": {
+      "number": "+30 693 246 7584",
+      "type": "mobile",
+      "whatsapp_enabled": true,
+      "viber_enabled": true,
+      "hours": "9:00-03:00 daily",
+      "languages": ["Greek", "English"]
+    },
+    "secondary_phone": {
+      "number": "+30 28310 55234",
+      "type": "landline",
+      "hours": "12:00-24:00 daily",
+      "note": "Restaurant service only"
+    },
+    "email": {
+      "general": "info@bonobobar.gr",
+      "reservations": "reservations@bonobobar.gr",
+      "events": "events@bonobobar.gr",
+      "press": "press@bonobobar.gr",
+      "support": "support@bonobobar.gr"
+    },
+    "emergency_contact": {
+      "number": "+30 693 246 7584",
+      "name": "Manager on Duty",
+      "available": "24/7 during operating hours"
+    }
+  },
+  "online_presence": {
+    "website": "https://anastasios3.github.io/Bonobo-Bar-more----landing-page/",
+    "menu_website": "https://anastasios3.github.io/BONOBO_BAR_QRCODE/",
+    "booking_platform": "https://www.opentable.com/bonobo-bar-rethymno",
+    "delivery_platforms": {
+      "efood": "https://www.e-food.gr/delivery/rethymno/bonobo-bar",
+      "wolt": "https://wolt.com/el/grc/rethymno/restaurant/bonobo-bar"
+    }
+  },
+  "social_media": {
+    "facebook": {
+      "url": "https://www.facebook.com/bonobobargr/",
+      "handle": "@bonobobargr",
+      "id": "bonobobargr",
+      "followers": "2.1K",
+      "verified": false
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/bonobobargr/",
+      "handle": "@bonobobargr",
+      "id": "bonobobargr",
+      "followers": "3.5K",
+      "verified": false
+    },
+    "tripadvisor": {
+      "url": "https://www.tripadvisor.com.gr/Restaurant_Review-g189421-d12875071-Reviews-Bonobo_Bar-Rethymnon_Rethymnon_Prefecture_Crete.html",
+      "rating": 4.6,
+      "reviews": 640,
+      "ranking": "#12 of 156 restaurants in Rethymno"
+    },
+    "google_business": {
+      "url": "https://www.google.com/maps/place/Bonobo+Bar",
+      "place_id": "ChIJt6J6qKB1nBQR_Ln0lL1JctM",
+      "rating": 4.5,
+      "reviews": 890
+    }
+  },
+  "location_details": {
+    "neighborhood": "Old Town Rethymno",
+    "landmark": "Venetian Harbor",
+    "accessibility": {
+      "wheelchair_accessible": true,
+      "accessible_parking": false,
+      "accessible_restroom": true,
+      "braille_menu": false,
+      "hearing_loop": false
+    },
+    "parking": {
+      "on_site": false,
+      "street_parking": "limited",
+      "paid_parking": "nearby",
+      "municipal_lots": [
+        {
+          "name": "Municipal Parking Rethymno",
+          "distance": "200m",
+          "price": "€2/hour"
+        }
+      ]
+    },
+    "transportation": {
+      "bus_stop": {
+        "name": "Old Town",
+        "distance": "100m",
+        "routes": ["Route 2", "Route 6"]
+      },
+      "taxi_stand": {
+        "distance": "150m",
+        "available": "24/7"
+      },
+      "ferry_terminal": {
+        "distance": "2km",
+        "name": "Rethymno Port"
+      },
+      "airport": {
+        "name": "Chania International Airport",
+        "distance": "60km",
+        "drive_time": "45 minutes"
+      }
+    }
+  },
+  "business_details": {
+    "license_number": "ΑΦΜ: 123456789",
+    "vat_number": "EL123456789",
+    "business_registration": "Rethymno Chamber of Commerce",
+    "food_safety_rating": "A",
+    "capacity": {
+      "indoor": 45,
+      "outdoor": 65,
+      "total": 110,
+      "private_events": 80
+    },
+    "payment_methods": [
+      "Cash",
+      "Visa",
+      "Mastercard",
+      "American Express",
+      "Contactless",
+      "Apple Pay",
+      "Google Pay"
+    ],
+    "languages_spoken": ["Greek", "English", "German", "French", "Italian"]
+  },
+  "services": {
+    "dine_in": true,
+    "takeaway": true,
+    "delivery": true,
+    "catering": true,
+    "private_events": true,
+    "live_music": true,
+    "wifi": true,
+    "pet_friendly": true,
+    "outdoor_seating": true,
+    "beachfront": true,
+    "cocktail_bar": true,
+    "coffee_shop": true,
+    "late_night": true
+  },
+  "certifications": {
+    "trip_advisor_certificate_of_excellence": "2023",
+    "google_reviews_recognition": "2024",
+    "local_business_award": "Best Beachfront Bar 2023"
+  },
+  "press_contacts": {
+    "media_manager": {
+      "name": "Maria Papadaki",
+      "email": "press@bonobobar.gr",
+      "phone": "+30 693 246 7584",
+      "languages": ["Greek", "English"]
+    },
+    "high_res_photos": "https://drive.google.com/folder/press-kit",
+    "press_kit": "Available upon request"
+  },
+  "emergency_information": {
+    "nearest_hospital": {
+      "name": "Rethymno General Hospital",
+      "distance": "3km",
+      "phone": "+30 28310 87100"
+    },
+    "police_station": {
+      "name": "Rethymno Police Station",
+      "distance": "500m",
+      "phone": "100"
+    },
+    "fire_department": {
+      "phone": "199",
+      "distance": "1km"
+    }
+  },
+  "last_updated": "2025-01-28T12:00:00Z",
+  "verification_status": "verified",
+  "data_sources": [
+    "Business owner",
+    "Google My Business",
+    "TripAdvisor",
+    "Official website"
+  ]
+}

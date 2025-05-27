@@ -1,0 +1,676 @@
+/**
+ * Bonobo Bar & More - Card Components
+ * Sophisticated card system with glass morphism and depth
+ * 
+ * This file provides:
+ * - Multiple card variants with glass morphism effects
+ * - Interactive hover states with smooth transitions
+ * - Feature cards with icons and content organization
+ * - Menu item cards with pricing and descriptions
+ * - Image cards with overlay content
+ * - Accessibility-compliant focus states
+ */
+
+/* ================================
+   BASE CARD FOUNDATION
+   Core card structure and styling
+   ================================ */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition-base);
+  isolation: isolate; /* Create stacking context */
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--border-accent);
+}
+
+.card:focus-within {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ================================
+       CARD VARIANTS
+       Different visual styles for various use cases
+       ================================ */
+
+/* Glass Card - Premium glass morphism effect */
+.card--glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .card--glass {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card--glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .card--glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--glow-purple);
+}
+
+/* Feature Card - For service highlights */
+.card--feature {
+  text-align: center;
+  padding: var(--space-8);
+  background: linear-gradient(
+    135deg,
+    var(--bg-card) 0%,
+    var(--bg-secondary) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.card--feature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    var(--brand-light) 100%
+  );
+}
+
+.card--feature:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+/* Menu Card - For food and drink items */
+.card--menu {
+  flex-direction: row;
+  align-items: center;
+  padding: var(--space-4);
+  gap: var(--space-4);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+}
+
+.card--menu:hover {
+  background: var(--bg-secondary);
+  transform: scale(1.02);
+}
+
+/* Image Card - For gallery and featured content */
+.card--image {
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-2xl);
+}
+
+.card--image:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* Compact Card - Smaller variant for secondary content */
+.card--compact {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+}
+
+/* ================================
+       CARD STRUCTURE COMPONENTS
+       Individual elements within cards
+       ================================ */
+
+/* Card Header */
+.card__header {
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border-bottom: 1px solid var(--border-primary);
+  background: linear-gradient(
+    135deg,
+    var(--bg-card) 0%,
+    var(--bg-secondary) 100%
+  );
+}
+
+.card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-accent);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.card__subtitle {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Card Body */
+.card__body {
+  padding: var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card__content {
+  flex: 1;
+}
+
+.card__description {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Card Footer */
+.card__footer {
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  border-top: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
+  margin-top: auto;
+}
+
+.card__actions {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* ================================
+       CARD MEDIA ELEMENTS
+       Images, icons, and visual content
+       ================================ */
+
+/* Card Image */
+.card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.card--image .card__image {
+  border-radius: var(--radius-2xl);
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: var(--transition-slow);
+}
+
+.card:hover .card__image img {
+  transform: scale(1.1);
+}
+
+.card__image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  padding: var(--space-6);
+  transform: translateY(100%);
+  transition: var(--transition-base);
+}
+
+.card:hover .card__image-overlay {
+  transform: translateY(0);
+}
+
+/* Card Icon */
+.card__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--brand-light) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text-inverse);
+  margin: 0 auto var(--space-4);
+  flex-shrink: 0;
+}
+
+.card--feature .card__icon {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  margin-bottom: var(--space-6);
+}
+
+.card--menu .card__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* ================================
+       SPECIALIZED CARD TYPES
+       Domain-specific card implementations
+       ================================ */
+
+/* Feature Card Content */
+.feature-card {
+  padding: var(--space-8);
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    var(--brand-light) 100%
+  );
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-accent);
+}
+
+.feature-card__icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto var(--space-6);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--brand-light) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--text-inverse);
+}
+
+.feature-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.feature-card__description {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Menu Item Card */
+.menu-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-fast);
+}
+
+.menu-card:hover {
+  background: var(--bg-secondary);
+  border-color: var(--border-accent);
+  transform: translateX(var(--space-2));
+}
+
+.menu-card__image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.menu-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card__content {
+  flex: 1;
+}
+
+.menu-card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.menu-card__description {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.menu-card__price {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Contact Card */
+.contact-card {
+  padding: var(--space-6);
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  transition: var(--transition-base);
+}
+
+.contact-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.contact-card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.contact-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-card__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.contact-card__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ================================
+       CARD GRID LAYOUTS
+       Responsive grid systems for card arrangements
+       ================================ */
+
+.card-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+}
+
+/* Responsive grid layouts */
+@media (min-width: 640px) {
+  .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    gap: var(--space-8);
+  }
+
+  .card-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Auto-fit grid for flexible layouts */
+.card-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card-grid--auto-small {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ================================
+       CARD ANIMATIONS
+       Scroll-triggered and hover animations
+       ================================ */
+
+.card--animate {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: var(--transition-slow);
+}
+
+.card--animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.card--animate:nth-child(1) {
+  transition-delay: 0ms;
+}
+.card--animate:nth-child(2) {
+  transition-delay: 100ms;
+}
+.card--animate:nth-child(3) {
+  transition-delay: 200ms;
+}
+.card--animate:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+/* ================================
+       DARK THEME ENHANCEMENTS
+       Enhanced styling for dark mode
+       ================================ */
+
+[data-theme="dark"] .card {
+  background: var(--bg-card);
+  border-color: var(--neutral-700);
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: var(--glow-purple);
+  border-color: var(--brand-light);
+}
+
+[data-theme="dark"] .card__header {
+  background: linear-gradient(
+    135deg,
+    var(--neutral-800) 0%,
+    var(--neutral-700) 100%
+  );
+  border-bottom-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .card__footer {
+  background: var(--neutral-800);
+  border-top-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .feature-card:hover {
+  box-shadow: var(--glow-purple);
+}
+
+/* ================================
+       ACCESSIBILITY ENHANCEMENTS
+       Screen reader and keyboard navigation support
+       ================================ */
+
+.card[tabindex] {
+  cursor: pointer;
+}
+
+.card[tabindex]:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border-width: 2px;
+  }
+
+  .card:hover {
+    border-color: var(--text-primary);
+  }
+}
+
+/* ================================
+       MOBILE OPTIMIZATIONS
+       Touch-friendly interactions and responsive adjustments
+       ================================ */
+
+@media (max-width: 640px) {
+  .card {
+    border-radius: var(--radius-lg);
+  }
+
+  .card__body {
+    padding: var(--space-4);
+  }
+
+  .card__header {
+    padding: var(--space-4) var(--space-4) var(--space-3);
+  }
+
+  .card__footer {
+    padding: var(--space-3) var(--space-4) var(--space-4);
+  }
+
+  .feature-card {
+    padding: var(--space-6);
+  }
+
+  .card-grid {
+    gap: var(--space-4);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+  }
+
+  .card--glass:hover {
+    transform: none;
+  }
+
+  .menu-card:hover {
+    transform: none;
+  }
+}
+
+/* ================================
+       REDUCED MOTION SUPPORT
+       Accessibility for motion-sensitive users
+       ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .card__image img,
+  .card__image-overlay,
+  .feature-card:hover,
+  .menu-card:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .card--animate {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ================================
+       PRINT STYLES
+       Card optimization for print media
+       ================================ */
+
+@media print {
+  .card {
+    background: white !important;
+    border: 1px solid black !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: var(--space-4);
+  }
+
+  .card__title {
+    color: black !important;
+  }
+
+  .card__actions {
+    display: none !important;
+  }
+}

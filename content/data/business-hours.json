@@ -1,0 +1,242 @@
+{
+  "regular": {
+    "monday": {
+      "open": "09:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": "Open until 3:00 AM Tuesday"
+    },
+    "tuesday": {
+      "open": "09:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": "Open until 3:00 AM Wednesday"
+    },
+    "wednesday": {
+      "open": "09:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": "Open until 3:00 AM Thursday"
+    },
+    "thursday": {
+      "open": "09:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": "Open until 3:00 AM Friday"
+    },
+    "friday": {
+      "open": "09:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": "Open until 3:00 AM Saturday"
+    },
+    "saturday": {
+      "open": "09:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": "Open until 3:00 AM Sunday"
+    },
+    "sunday": {
+      "open": "09:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": "Open until 3:00 AM Monday"
+    }
+  },
+  "services": {
+    "breakfast": {
+      "start": "09:00",
+      "end": "12:00",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "description": {
+        "en": "Fresh breakfast and artisan coffee",
+        "gr": "Φρέσκο πρωινό και artisan καφές"
+      }
+    },
+    "brunch": {
+      "start": "11:00",
+      "end": "15:00",
+      "days": ["saturday", "sunday"],
+      "description": {
+        "en": "Weekend brunch with sea views",
+        "gr": "Σαββατοκύριακο brunch με θέα στη θάλασσα"
+      }
+    },
+    "lunch": {
+      "start": "12:00",
+      "end": "17:00",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "description": {
+        "en": "Mediterranean lunch menu",
+        "gr": "Μεσογειακό μενού γεύματος"
+      }
+    },
+    "dinner": {
+      "start": "18:00",
+      "end": "23:00",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "description": {
+        "en": "Evening dining with cocktails",
+        "gr": "Βραδινό φαγητό με κοκτέιλ"
+      }
+    },
+    "drinks": {
+      "start": "12:00",
+      "end": "03:00",
+      "nextDay": true,
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "description": {
+        "en": "Full bar service all day",
+        "gr": "Πλήρης εξυπηρέτηση μπαρ όλη μέρα"
+      }
+    },
+    "live_music": {
+      "start": "21:00",
+      "end": "02:00",
+      "nextDay": true,
+      "days": ["friday", "saturday"],
+      "description": {
+        "en": "Live music and DJ sets",
+        "gr": "Ζωντανή μουσική και DJ sets"
+      }
+    }
+  },
+  "special_hours": {
+    "new_years_eve": {
+      "date": "2024-12-31",
+      "open": "09:00",
+      "close": "06:00",
+      "nextDay": true,
+      "note": {
+        "en": "New Year's Eve - Open until 6:00 AM",
+        "gr": "Παραμονή Πρωτοχρονιάς - Ανοιχτά μέχρι 6:00 π.μ."
+      }
+    },
+    "new_years_day": {
+      "date": "2025-01-01",
+      "open": "15:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": {
+        "en": "New Year's Day - Opening at 3:00 PM",
+        "gr": "Πρωτοχρονιά - Άνοιγμα στις 3:00 μ.μ."
+      }
+    },
+    "orthodox_easter": {
+      "date": "2025-04-20",
+      "open": "12:00",
+      "close": "03:00",
+      "nextDay": true,
+      "note": {
+        "en": "Orthodox Easter - Special menu available",
+        "gr": "Ορθόδοξο Πάσχα - Διαθέσιμο ειδικό μενού"
+      }
+    }
+  },
+  "seasonal_adjustments": {
+    "summer": {
+      "months": [6, 7, 8, 9],
+      "extended_hours": {
+        "friday": {
+          "close": "04:00"
+        },
+        "saturday": {
+          "close": "04:00"
+        }
+      },
+      "beach_service": {
+        "start": "10:00",
+        "end": "20:00",
+        "description": {
+          "en": "Extended beach terrace service",
+          "gr": "Εκτεταμένη εξυπηρέτηση παραθαλάσσιας βεράντας"
+        }
+      }
+    },
+    "winter": {
+      "months": [12, 1, 2],
+      "adjusted_hours": {
+        "monday": {
+          "close": "01:00"
+        },
+        "tuesday": {
+          "close": "01:00"
+        },
+        "wednesday": {
+          "close": "01:00"
+        },
+        "thursday": {
+          "close": "02:00"
+        }
+      }
+    }
+  },
+  "timezone": "Europe/Athens",
+  "display_format": "24h",
+  "language_settings": {
+    "time_format": {
+      "en": "h:mm A",
+      "gr": "HH:mm"
+    },
+    "day_names": {
+      "en": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+      },
+      "gr": {
+        "monday": "Δευτέρα",
+        "tuesday": "Τρίτη",
+        "wednesday": "Τετάρτη",
+        "thursday": "Πέμπτη",
+        "friday": "Παρασκευή",
+        "saturday": "Σάββατο",
+        "sunday": "Κυριακή"
+      }
+    }
+  },
+  "contact_for_reservations": {
+    "phone": "+30 693 246 7584",
+    "email": "reservations@bonobobar.gr",
+    "note": {
+      "en": "Reservations recommended for dinner service",
+      "gr": "Συνιστώνται κρατήσεις για βραδινό φαγητό"
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "language": "en",
+    "locale": "en-US",
+    "title": "Bonobo Bar & More - All Day Beachfront Bar & Café in Rethymno, Crete",
+    "description": "Experience Bonobo Bar & More - Rethymno's premier beachfront destination for artisan coffee, craft cocktails, and Mediterranean cuisine. Open daily 9am-3am with stunning sea views."
+  },
+  "nav": {
+    "home": "Home",
+    "coffee": "Coffee & Breakfast",
+    "drinks": "Drinks",
+    "events": "Events",
+    "contact": "Contact",
+    "menu": "Full Menu",
+    "reservations": "Reservations"
+  },
+  "hero": {
+    "title": "Bonobo Bar & More",
+    "subtitle": "All day beachfront experience in the heart of Rethymno",
+    "description": "From morning coffee to late-night cocktails, discover our premium selection with stunning Mediterranean views",
+    "cta": {
+      "contact": "Get In Touch",
+      "menu": "View Menu",
+      "reserve": "Make Reservation"
+    },
+    "scroll": "Scroll to explore"
+  },
+  "coffee": {
+    "title": "Coffee & Breakfast",
+    "subtitle": "Start your day with artisan coffee and fresh Mediterranean flavors",
+    "description": "Begin your morning with our carefully curated coffee selection and fresh breakfast offerings, all enjoyed with panoramic sea views.",
+    "feature1": {
+      "title": "Artisan Coffee",
+      "description": "Premium espresso blends and specialty brewing methods for the perfect cup"
+    },
+    "feature2": {
+      "title": "Fresh Breakfast",
+      "description": "Mediterranean breakfast options with local ingredients and house-made specialties"
+    },
+    "feature3": {
+      "title": "Sea View Dining",
+      "description": "Enjoy your morning meal with panoramic views of the Mediterranean"
+    },
+    "hours": {
+      "title": "Morning Hours",
+      "time": "Daily: 9:00 AM - 12:00 PM"
+    }
+  },
+  "drinks": {
+    "title": "Beer, Wine & Spirits",
+    "subtitle": "Curated selection of local and international beverages",
+    "description": "Discover our extensive collection of craft beers, premium wines, and top-shelf spirits, carefully selected to complement your dining experience.",
+    "feature1": {
+      "title": "Craft Beers",
+      "description": "Local Greek breweries and international craft selections"
+    },
+    "feature2": {
+      "title": "Cretan Wines",
+      "description": "Exceptional local varietals and Mediterranean wine pairings"
+    },
+    "feature3": {
+      "title": "Premium Spirits",
+      "description": "Top-shelf spirits and traditional Greek liqueurs"
+    },
+    "hours": {
+      "title": "All Day Service",
+      "time": "Daily: 12:00 PM - 3:00 AM"
+    }
+  },
+  "events": {
+    "title": "Cocktails & Night Events",
+    "subtitle": "Signature cocktails and vibrant nightlife experiences",
+    "description": "As the sun sets, transform your evening with our handcrafted cocktails and live entertainment in the perfect beachfront atmosphere.",
+    "feature1": {
+      "title": "Signature Cocktails",
+      "description": "Handcrafted cocktails with local ingredients and creative presentations"
+    },
+    "feature2": {
+      "title": "Live Music",
+      "description": "Regular live performances and DJ sets creating the perfect atmosphere"
+    },
+    "feature3": {
+      "title": "Special Events",
+      "description": "Themed nights, celebrations, and exclusive beachfront parties"
+    },
+    "hours": {
+      "title": "Evening & Night",
+      "time": "Daily: 6:00 PM - 3:00 AM"
+    }
+  },
+  "contact": {
+    "title": "Visit Us",
+    "subtitle": "Find us on Rethymno's beautiful beachfront promenade",
+    "description": "Located in the heart of Rethymno's historic Old Town, we're easily accessible and perfectly positioned for your perfect day or evening out.",
+    "address": {
+      "title": "Address",
+      "street": "Eleftheríou Venizélou 47",
+      "city": "Rethymno 74100, Crete",
+      "country": "Greece"
+    },
+    "phone": {
+      "title": "Phone",
+      "number": "+30 693 246 7584"
+    },
+    "email": {
+      "title": "Email",
+      "address": "info@bonobobar.gr"
+    },
+    "hours": {
+      "title": "Hours",
+      "schedule": "Daily: 9:00 AM - 3:00 AM"
+    },
+    "social": {
+      "title": "Follow Us",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "tripadvisor": "TripAdvisor"
+    }
+  },
+  "footer": {
+    "description": "Rethymno's premier beachfront destination for exceptional experiences from dawn to dusk.",
+    "quick-links": {
+      "title": "Quick Links",
+      "home": "Home",
+      "coffee": "Coffee & Breakfast",
+      "drinks": "Drinks",
+      "events": "Events",
+      "menu": "Full Menu"
+    },
+    "contact": {
+      "title": "Contact Info",
+      "address": "Address:",
+      "phone": "Phone:",
+      "hours": "Hours:",
+      "schedule": "Daily 9:00 AM - 3:00 AM"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "copyright": "© 2025 Bonobo Bar & More. All rights reserved."
+  },
+  "cookie": {
+    "message": "We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.",
+    "accept": "Accept All",
+    "decline": "Decline",
+    "category": {
+      "necessary": "Necessary",
+      "analytics": "Analytics",
+      "marketing": "Marketing",
+      "preferences": "Preferences"
+    },
+    "settings": {
+      "title": "Cookie Settings",
+      "description": "Choose which cookies you want to allow. You can change these settings at any time.",
+      "save": "Save Settings",
+      "cancel": "Cancel"
+    }
+  },
+  "form": {
+    "contact": {
+      "title": "Get In Touch",
+      "description": "Send us a message and we'll get back to you as soon as possible.",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thank you for your message! We'll get back to you soon.",
+      "error": "Sorry, there was a problem sending your message. Please try again."
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Subscribe to our newsletter for events and special offers.",
+      "email": "Enter your email",
+      "submit": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "error": "Subscription failed. Please try again."
+    },
+    "reservation": {
+      "title": "Make a Reservation",
+      "description": "Reserve your table for the perfect dining experience.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "date": "Preferred Date",
+      "time": "Preferred Time",
+      "guests": "Number of Guests",
+      "occasion": "Special Occasion",
+      "requests": "Special Requests",
+      "submit": "Request Reservation",
+      "success": "Reservation request submitted! We'll confirm availability soon.",
+      "error": "Reservation request failed. Please call us directly."
+    }
+  },
+  "loading": {
+    "text": "Welcome to Bonobo Bar & More"
+  },
+  "accessibility": {
+    "skip-to-main": "Skip to main content",
+    "toggle-menu": "Toggle navigation menu",
+    "toggle-theme": "Toggle dark mode",
+    "change-language": "Change language",
+    "close-modal": "Close modal",
+    "map-location": "Bonobo Bar location on map"
+  },
+  "time": {
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "night": "Night",
+    "daily": "Daily",
+    "weekdays": "Monday - Friday",
+    "weekends": "Saturday - Sunday",
+    "closed": "Closed"
+  },
+  "weather": {
+    "sunny": "Sunny",
+    "cloudy": "Cloudy",
+    "rainy": "Rainy",
+    "perfect-for": "Perfect for our terrace!"
+  },
+  "menu": {
+    "breakfast": "Breakfast",
+    "brunch": "Brunch",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "cocktails": "Cocktails",
+    "beer": "Beer",
+    "wine": "Wine",
+    "coffee": "Coffee",
+    "desserts": "Desserts",
+    "appetizers": "Appetizers"
+  },
+  "status": {
+    "open": "Open Now",
+    "closed": "Closed",
+    "opening-soon": "Opening Soon",
+    "closing-soon": "Closing Soon"
+  }
+}
